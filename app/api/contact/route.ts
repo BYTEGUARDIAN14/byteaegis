@@ -46,7 +46,7 @@ export async function POST(req: Request) {
       }
     }
 
-    const { name, email, company, services, budget, inquiry, turnstileToken } = await req.json()
+    const { name, email, company, services, timeline, inquiry, turnstileToken } = await req.json()
 
     // 2. Bot Protection via Cloudflare Turnstile
     if (process.env.TURNSTILE_SECRET_KEY) {
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
       from: "byteaegis Web <hello@byteaegis.online>", // Must be a verified domain in Resend
       to: "byteguardx@gmail.com",
       subject: `New Lead: ${name} from ${company || "Website"}`,
-      react: ContactNotificationEmail({ name, email, company, services, budget, inquiry }),
+      react: ContactNotificationEmail({ name, email, company, services, timeline, inquiry }),
       replyTo: email,
     })
 

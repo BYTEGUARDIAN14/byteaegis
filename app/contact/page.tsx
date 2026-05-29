@@ -15,12 +15,12 @@ const SERVICES = [
   { id: "consulting", label: "Consulting", icon: Briefcase },
 ]
 
-const BUDGETS = [
-  "Under $5k",
-  "$5k, $10k",
-  "$10k, $25k",
-  "$25k, $50k",
-  "$50k+"
+const TIMELINES = [
+  "ASAP",
+  "Within 1 Month",
+  "1-3 Months",
+  "3+ Months",
+  "Flexible"
 ]
 
 export default function ContactPage() {
@@ -30,7 +30,7 @@ export default function ContactPage() {
   
   // Custom Form State
   const [selectedServices, setSelectedServices] = useState<string[]>([])
-  const [selectedBudget, setSelectedBudget] = useState<string>("")
+  const [selectedTimeline, setSelectedTimeline] = useState<string>("")
   const [turnstileToken, setTurnstileToken] = useState<string>("")
 
   const toggleService = (id: string) => {
@@ -50,7 +50,7 @@ export default function ContactPage() {
       email: formData.get("email"),
       company: formData.get("company"),
       services: selectedServices,
-      budget: selectedBudget,
+      timeline: selectedTimeline,
       inquiry: formData.get("inquiry"),
       turnstileToken,
     }
@@ -180,25 +180,25 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* 2. Budget Section */}
+                {/* 2. Timeline Section */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 border-b border-white/10 pb-2 mb-4">
                     <span className="bg-[#3b82f6]/20 text-[#3b82f6] w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                    <h2 className="text-xl font-semibold text-white">Estimated Budget</h2>
+                    <h2 className="text-xl font-semibold text-white">Project Timeline</h2>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    {BUDGETS.map((budget) => (
+                    {TIMELINES.map((timeline) => (
                       <button
-                        key={budget}
+                        key={timeline}
                         type="button"
-                        onClick={() => setSelectedBudget(budget)}
+                        onClick={() => setSelectedTimeline(timeline)}
                         className={`px-5 py-2.5 rounded-full border transition-all text-sm font-medium ${
-                          selectedBudget === budget
+                          selectedTimeline === timeline
                             ? "bg-[#3b82f6] border-[#3b82f6] text-white"
                             : "bg-white/5 border-white/10 text-white/60 hover:bg-white/10"
                         }`}
                       >
-                        {budget}
+                        {timeline}
                       </button>
                     ))}
                   </div>

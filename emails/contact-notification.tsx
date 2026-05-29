@@ -17,7 +17,7 @@ interface ContactNotificationEmailProps {
   email: string
   company?: string
   services?: string[]
-  budget?: string
+  timeline?: string
   inquiry: string
 }
 
@@ -26,7 +26,7 @@ export default function ContactNotificationEmail({
   email,
   company,
   services,
-  budget,
+  timeline,
   inquiry,
 }: ContactNotificationEmailProps) {
   return (
@@ -54,9 +54,9 @@ export default function ContactNotificationEmail({
                   <strong>Company:</strong> {company}
                 </Text>
               )}
-              {budget && (
+              {timeline && (
                 <Text className="text-gray-700 text-base mb-2">
-                  <strong>Budget:</strong> {budget}
+                  <strong>Timeline:</strong> {timeline}
                 </Text>
               )}
               {services && services.length > 0 && (
