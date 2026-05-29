@@ -10,6 +10,7 @@ import {
   Text,
   Hr,
   Tailwind,
+  Img,
 } from "@react-email/components"
 
 interface ContactNotificationEmailProps {
