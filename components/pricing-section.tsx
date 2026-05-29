@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import { Rocket, Building2, Code2, Check } from "lucide-react"
+import Link from "next/link"
 
 const clients = [
   {
@@ -127,7 +128,7 @@ export function PricingSection() {
               </ul>
 
               {/* CTA */}
-              <a href="/contact">
+              <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
@@ -139,7 +140,7 @@ export function PricingSection() {
                 >
                   {c.cta}
                 </motion.button>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>

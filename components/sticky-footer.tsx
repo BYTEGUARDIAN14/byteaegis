@@ -1,6 +1,7 @@
 "use client"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 
 export function StickyFooter() {
   const [isAtBottom, setIsAtBottom] = useState(false)
@@ -98,7 +99,7 @@ export function StickyFooter() {
                   onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#121113")}
                 >
-                  <a href="/contact">Send an email</a>
+                  <Link href="/contact">Send an email</Link>
                 </li>
               </ul>
             </motion.div>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Shield } from "lucide-react"
+import Link from "next/link"
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
@@ -55,7 +56,7 @@ export default function Hero() {
           >
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <a href="/contact">
+              <Link href="/contact">
                 <div className="group cursor-pointer border border-border bg-card gap-2 h-[60px] flex items-center p-[10px] rounded-full min-w-[200px]">
                   <div className="border border-border bg-primary h-[40px] rounded-full flex items-center justify-center text-primary-foreground w-full">
                     <p className="font-medium tracking-tight mr-3 ml-3 flex items-center gap-2 justify-center text-base">
@@ -95,7 +96,7 @@ export default function Hero() {
                     </svg>
                   </div>
                 </div>
-              </a>
+              </Link>
 
               <a href="https://github.com/BYTEGUARDIAN14" target="_blank" rel="noopener noreferrer">
                 <div className="group cursor-pointer border border-border bg-card/40 hover:bg-card gap-2 h-[60px] flex items-center p-[10px] rounded-full transition-all duration-200 min-w-[200px]">
