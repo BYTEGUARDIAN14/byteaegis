@@ -76,26 +76,30 @@ export async function POST(req: Request) {
 
     // 3. Send Notification Email to Founder
     await resend.emails.send({
-      from: "byteaegis Web <hello@byteaegis.online>", // Must be a verified domain in Resend
+      from: "onboarding@resend.dev", // Fallback for unverified domains
       to: "byteguardx@gmail.com",
       subject: `New Lead: ${name} from ${company || "Website"}`,
       react: ContactNotificationEmail({ name, email, company, services, timeline, inquiry }),
       replyTo: email,
     })
 
-    // 4. Send Confirmation Email to User
-    await resend.emails.send({
-      from: "byteaegis <hello@byteaegis.online>", // Must be a verified domain in Resend
-      to: email,
-      subject: "We received your inquiry, byteaegis",
-      react: ContactConfirmationEmail({ name, inquiry }),
-    })
+    // 4. Send Confirmation Email to User (This may fail if sending to arbitrary emails from onboarding@resend.dev)
+    try {
+      await resend.emails.send({
+        from: "onboarding@resend.dev", // Fallback
+        to: email,
+        subject: "We received your inquiry, byteaegis",
+        react: ContactConfirmationEmail({ name, inquiry }),
+      })
+    } catch (e) {
+      console.warn("Failed to send confirmation email. This is normal if using an unverified Resend domain.")
+    }
 
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (error: any) {
     console.error("[CONTACT_API_ERROR]", error)
     return NextResponse.json(
-      { error: "Failed to send email" },
+      { error: error instanceof Error ? error.message : JSON.stringify(error) },
       { status: 500 }
     )
   }

@@ -72,10 +72,13 @@ export default function ContactPage() {
         body: JSON.stringify(data),
       })
 
-      if (!response.ok) throw new Error("Failed to send message")
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}))
+        throw new Error(errData.error || "Failed to send message")
+      }
       setIsSuccess(true)
-    } catch (err) {
-      setError("Something went wrong. Please try again or email us directly.")
+    } catch (err: any) {
+      setError(err.message || "Something went wrong. Please try again or email us directly.")
     } finally {
       setIsSubmitting(false)
     }
