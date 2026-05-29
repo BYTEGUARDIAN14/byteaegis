@@ -45,6 +45,16 @@ export default function ContactPage() {
     setError("")
 
     const formData = new FormData(e.currentTarget)
+    
+    // Honeypot check - if bot_field is filled out, it's a bot
+    const botField = formData.get("bot_field")
+    if (botField) {
+      // Fake a success to trick the bot
+      setIsSubmitting(false)
+      setIsSuccess(true)
+      return
+    }
+
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -234,6 +244,12 @@ export default function ContactPage() {
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50 focus:border-[#3b82f6] transition-all"
                       />
                     </div>
+                  </div>
+
+                  {/* Honeypot field - visually hidden to catch bots */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="bot_field">Don&apos;t fill this out if you&apos;re human:</label>
+                    <input type="text" id="bot_field" name="bot_field" tabIndex={-1} autoComplete="off" />
                   </div>
 
                   <div className="space-y-2">

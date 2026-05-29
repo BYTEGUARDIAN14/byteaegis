@@ -82,6 +82,9 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
 
+  // Disable source maps in production to prevent leaking internal code
+  productionBrowserSourceMaps: false,
+
 
   // Use Next.js optimised images with explicit remote patterns
   images: {
