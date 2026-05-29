@@ -5,16 +5,20 @@ import { Redis } from "@upstash/redis"
 import ContactConfirmationEmail from "@/emails/contact-confirmation"
 import ContactNotificationEmail from "@/emails/contact-notification"
 
-// Initialize Upstash Redis for Rate Limiting (3 requests per hour per IP)
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL || "",
-  token: process.env.UPSTASH_REDIS_REST_TOKEN || "",
-})
+// Initialize Upstash Redis conditionally
+const redis = process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+  ? new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    })
+  : null
 
-const ratelimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(3, "1 h"),
-})
+const ratelimit = redis
+  ? new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(3, "1 h"),
+    })
+  : null
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -36,7 +40,7 @@ export async function POST(req: Request) {
     const ip = req.headers.get("x-forwarded-for") || "anonymous"
     
     // Only enforce rate limiting if Redis credentials are provided
-    if (process.env.UPSTASH_REDIS_REST_URL) {
+    if (ratelimit) {
       const { success } = await ratelimit.limit(ip)
       if (!success) {
         return NextResponse.json(
