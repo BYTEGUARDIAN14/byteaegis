@@ -78,10 +78,6 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
 
-  // Allow builds even if ESLint warnings exist
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
 
   // Use Next.js optimised images with explicit remote patterns
   images: {
