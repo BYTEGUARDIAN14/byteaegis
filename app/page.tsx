@@ -117,7 +117,7 @@ export default function Home() {
 
         <div className="flex items-center gap-4 relative z-50">
           <a
-            href="mailto:hello@byteaegis.online"
+            href="/contact"
             className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm"
           >
             Contact Us
@@ -185,7 +185,7 @@ export default function Home() {
               </button>
               <div className="border-t border-border/50 pt-4 mt-4 flex flex-col space-y-3">
                 <a
-                  href="mailto:hello@byteaegis.online"
+                  href="/contact"
                   className="px-4 py-3 text-lg font-bold text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Contact Us

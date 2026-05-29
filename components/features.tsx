@@ -80,7 +80,7 @@ export default function Features() {
                   <h3 className="text-2xl leading-none font-semibold tracking-tight">Secure Web &amp; Desktop Development</h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
                     <p className="max-w-[460px]">
-                      We build full-stack web applications and desktop software from scratch, with security baked in from day one — not reviewed after the fact. We own the entire stack, from database design to frontend UI.
+                      We build full-stack web applications and desktop software from scratch, with security baked in from day one - not reviewed after the fact. We own the entire stack, from database design to frontend UI.
                     </p>
                   </div>
                 </div>
@@ -371,7 +371,7 @@ export default function Features() {
                   <h3 className="text-2xl leading-none font-semibold tracking-tight">AI Integration for Security Workflows</h3>
                   <div className="text-md text-muted-foreground flex flex-col gap-2 text-sm">
                     <p className="max-w-[460px]">
-                      We build and integrate AI-powered tooling into your security workflows — automated threat analysis, intelligent scan result summarization, risk scoring, and AI-assisted remediation suggestions using cloud or locally-hosted models.
+                      We build and integrate AI-powered tooling into your security workflows - automated threat analysis, intelligent scan result summarization, risk scoring, and AI-assisted remediation suggestions using cloud or locally-hosted models.
                     </p>
                   </div>
                 </div>

@@ -4,32 +4,32 @@ const whybyteaegis = [
   {
     name: "Security is Core",
     username: "Not an Afterthought",
-    body: "We treat security as a fundamental requirement from day one — not something reviewed after the software is built. Every line of code we write is written with threat modeling in mind.",
+    body: "We treat security as a fundamental requirement from day one - not something reviewed after the software is built. Every line of code we write is written with threat modeling in mind.",
   },
   {
     name: "End-to-End Ownership",
     username: "Full Project Scope",
-    body: "We handle the full scope — design, development, testing, and deployment. Clients don't need to coordinate between multiple agencies or freelancers. One team, complete accountability.",
+    body: "We handle the full scope - design, development, testing, and deployment. Clients don't need to coordinate between multiple agencies or freelancers. One team, complete accountability.",
   },
   {
     name: "Startup Mindset",
     username: "Speed & Security",
-    body: "We understand that startups move fast. We help you ship quickly without cutting corners on security — because a breach early on can be company-ending.",
+    body: "We understand that startups move fast. We help you ship quickly without cutting corners on security - because a breach early on can be company-ending.",
   },
   {
     name: "AI-Augmented Security",
     username: "Modern Tooling",
-    body: "We integrate AI into security workflows using both cloud and locally-hosted models — giving clients intelligent threat analysis and risk scoring without sacrificing data privacy.",
+    body: "We integrate AI into security workflows using both cloud and locally-hosted models - giving clients intelligent threat analysis and risk scoring without sacrificing data privacy.",
   },
   {
     name: "Founder-Led Work",
     username: "Direct Access",
-    body: "Founded by Mohamed Adhnaan J M, a CS student from Tamil Nadu. When you work with byteaegis, you work directly with the person doing the work — not a middleman.",
+    body: "Founded by Mohamed Adhnaan J M, a CS student from Tamil Nadu. When you work with byteaegis, you work directly with the person doing the work - not a middleman.",
   },
   {
     name: "Security Culture",
     username: "DevSecOps Adoption",
-    body: "We don't just fix your current issues — we help your team build a security-aware engineering culture. Better practices, better defaults, better outcomes long-term.",
+    body: "We don't just fix your current issues - we help your team build a security-aware engineering culture. Better practices, better defaults, better outcomes long-term.",
   },
   {
     name: "Code Auditing",
@@ -39,7 +39,7 @@ const whybyteaegis = [
   {
     name: "Pipeline Automation",
     username: "Catch Issues Early",
-    body: "Every code push gets automatically scanned for vulnerabilities and secrets. Security issues are caught before they ever reach production — not discovered post-incident.",
+    body: "Every code push gets automatically scanned for vulnerabilities and secrets. Security issues are caught before they ever reach production - not discovered post-incident.",
   },
   {
     name: "Architecture Review",

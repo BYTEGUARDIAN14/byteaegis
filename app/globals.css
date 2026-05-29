@@ -173,7 +173,7 @@ body {
   letter-spacing: var(--tracking-normal);
 }
 
-/* Global custom cursor — hide native cursor everywhere */
+/* Global custom cursor - hide native cursor everywhere */
 *, *::before, *::after { cursor: none !important; }
 
 

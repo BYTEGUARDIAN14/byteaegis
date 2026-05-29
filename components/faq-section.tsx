@@ -20,7 +20,7 @@ export function FAQSection() {
     {
       question: "What services does byteaegis offer?",
       answer:
-        "We offer five core services: (1) Secure Web & Desktop Application Development — full-stack builds with security built in from day one. (2) Vulnerability Assessment & Code Auditing — identifying security flaws in your existing codebase with a prioritized remediation report. (3) DevSecOps & CI/CD Pipeline Setup — automating security scanning in your development workflow. (4) AI Integration for Security Workflows — building AI-powered threat analysis and risk scoring tools. (5) Security Consulting & Architecture Review — advising teams on best practices, penetration testing, and cloud hardening.",
+        "We offer five core services: (1) Secure Web & Desktop Application Development - full-stack builds with security built in from day one. (2) Vulnerability Assessment & Code Auditing - identifying security flaws in your existing codebase with a prioritized remediation report. (3) DevSecOps & CI/CD Pipeline Setup - automating security scanning in your development workflow. (4) AI Integration for Security Workflows - building AI-powered threat analysis and risk scoring tools. (5) Security Consulting & Architecture Review - advising teams on best practices, penetration testing, and cloud hardening.",
     },
     {
       question: "Who does byteaegis work with?",
@@ -30,7 +30,7 @@ export function FAQSection() {
     {
       question: "How does byteaegis handle projects end-to-end?",
       answer:
-        "We handle the full scope of work — from requirement gathering to delivery. This includes design, development, testing, and deployment. Clients don't need to coordinate between multiple agencies or freelancers. We take ownership of the entire engagement.",
+        "We handle the full scope of work - from requirement gathering to delivery. This includes design, development, testing, and deployment. Clients don't need to coordinate between multiple agencies or freelancers. We take ownership of the entire engagement.",
     },
     {
       question: "How do I get started with byteaegis?",

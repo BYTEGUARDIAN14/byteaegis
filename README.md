@@ -13,16 +13,16 @@
 
 ## 🛡️ What We Do
 
-We take on client projects end-to-end — from requirement gathering to delivery — and treat security not as an afterthought, but as a foundational requirement.
+We take on client projects end-to-end - from requirement gathering to delivery - and treat security not as an afterthought, but as a foundational requirement.
 
 1. **Secure Web & Desktop Development**
    End-to-end web and desktop application development with security baked in from day one. We handle the full stack, from database design to frontend UI.
 2. **Vulnerability Assessment & Code Auditing**
    We review your codebase and identify exposed credentials, insecure dependencies, and risky patterns. You receive a prioritized report with clear, actionable remediation steps.
 3. **DevSecOps & CI/CD Pipeline Setup**
-   Automated security scanning on every code push — vulnerabilities caught before they ever reach production. Built for GitHub Actions, GitLab CI, and Docker-based workflows.
+   Automated security scanning on every code push - vulnerabilities caught before they ever reach production. Built for GitHub Actions, GitLab CI, and Docker-based workflows.
 4. **AI Integration for Security Workflows**
-   AI-powered threat analysis, intelligent scan summarization, and risk scoring integrated into your security stack — using cloud or locally-hosted models depending on your requirements.
+   AI-powered threat analysis, intelligent scan summarization, and risk scoring integrated into your security stack - using cloud or locally-hosted models depending on your requirements.
 5. **Security Consulting & Architecture Review**
    Architecture review from a security standpoint for teams building or scaling systems. Includes cloud hardening, penetration testing guidance, and DevSecOps adoption roadmaps.
 
