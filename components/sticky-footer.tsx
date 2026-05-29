@@ -90,7 +90,7 @@ export function StickyFooter() {
                   onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#121113")}
                 >
-                  <a href="https://byteaegis.in" target="_blank" rel="noopener noreferrer">byteaegis.in</a>
+                  <a href="https://byteaegis.online" target="_blank" rel="noopener noreferrer">byteaegis.online</a>
                 </li>
                 <li
                   className="hover:underline cursor-pointer transition-colors"
@@ -98,7 +98,7 @@ export function StickyFooter() {
                   onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "rgba(18, 17, 19, 0.8)")}
                   onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#121113")}
                 >
-                  <a href="mailto:hello@byteaegis.in">hello@byteaegis.in</a>
+                  <a href="mailto:hello@byteaegis.online">hello@byteaegis.online</a>
                 </li>
               </ul>
             </motion.div>

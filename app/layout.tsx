@@ -5,8 +5,8 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "ByteAegis - Cybersecurity & Secure Software Development",
-  description: "ByteAegis is a service-based cybersecurity and software development startup. We build secure software, audit codebases, set up DevSecOps pipelines, and integrate AI into security workflows for startups and businesses.",
+  title: "byteaegis - Cybersecurity & Secure Software Development",
+  description: "byteaegis is a service-based cybersecurity and software development startup. We build secure software, audit codebases, set up DevSecOps pipelines, and integrate AI into security workflows for startups and businesses.",
   generator: "v0.app",
 }
 

@@ -127,7 +127,7 @@ export function PricingSection() {
               </ul>
 
               {/* CTA */}
-              <a href="mailto:hello@byteaegis.in">
+              <a href="mailto:hello@byteaegis.online">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}

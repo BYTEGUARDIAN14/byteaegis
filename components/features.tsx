@@ -176,7 +176,7 @@ export default function Features() {
                         >
                           <img
                             src="/logo-blue.svg"
-                            alt="ByteAegis"
+                            alt="byteaegis"
                             className="w-full h-full object-cover p-2"
                           />
                         </motion.div>

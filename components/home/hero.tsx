@@ -54,7 +54,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground"
           >
-            ByteAegis is a cybersecurity and software development startup working with startups, small businesses,
+            byteaegis is a cybersecurity and software development startup working with startups, small businesses,
             and development teams who need security-focused software built or their existing systems hardened.
             Security isn&apos;t an add-on — it&apos;s fundamental to every engagement we take on.
           </motion.p>
@@ -67,7 +67,7 @@ export default function Hero() {
           >
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <a href="mailto:hello@byteaegis.in">
+              <a href="mailto:hello@byteaegis.online">
                 <div className="group cursor-pointer border border-border bg-card gap-2 h-[60px] flex items-center p-[10px] rounded-full min-w-[200px]">
                   <div className="border border-border bg-primary h-[40px] rounded-full flex items-center justify-center text-primary-foreground w-full">
                     <p className="font-medium tracking-tight mr-3 ml-3 flex items-center gap-2 justify-center text-base">

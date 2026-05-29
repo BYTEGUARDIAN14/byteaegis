@@ -32,7 +32,7 @@ async function handleProxy(req: NextRequest) {
     // Ensure the request is coming from your own frontend, not a malicious third-party site.
     const origin = req.headers.get("origin") || req.headers.get("referer")
     const isDevelopment = process.env.NODE_ENV === "development"
-    const allowedOrigin = "https://byteaegis.in" // Replace with your production domain
+    const allowedOrigin = "https://byteaegis.online" // Replace with your production domain
 
     if (!isDevelopment) {
       if (!origin || !origin.startsWith(allowedOrigin)) {

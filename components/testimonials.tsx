@@ -1,6 +1,6 @@
 import { Marquee } from "@/components/magicui/marquee"
 
-const whyByteAegis = [
+const whybyteaegis = [
   {
     name: "Security is Core",
     username: "Not an Afterthought",
@@ -24,7 +24,7 @@ const whyByteAegis = [
   {
     name: "Founder-Led Work",
     username: "Direct Access",
-    body: "Founded by Mohamed Adhnaan J M, a CS student from Tamil Nadu. When you work with ByteAegis, you work directly with the person doing the work — not a middleman.",
+    body: "Founded by Mohamed Adhnaan J M, a CS student from Tamil Nadu. When you work with byteaegis, you work directly with the person doing the work — not a middleman.",
   },
   {
     name: "Security Culture",
@@ -48,9 +48,9 @@ const whyByteAegis = [
   },
 ]
 
-const firstColumn = whyByteAegis.slice(0, 3)
-const secondColumn = whyByteAegis.slice(3, 6)
-const thirdColumn = whyByteAegis.slice(6, 9)
+const firstColumn = whybyteaegis.slice(0, 3)
+const secondColumn = whybyteaegis.slice(3, 6)
+const thirdColumn = whybyteaegis.slice(6, 9)
 
 const ReasonCard = ({
   name,
@@ -89,7 +89,7 @@ export function TestimonialsSection() {
             >
               <div className="absolute inset-x-0 -top-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#3b82f6] to-transparent shadow-2xl transition-all duration-500 group-hover:w-3/4"></div>
               <div className="absolute inset-x-0 -bottom-px mx-auto h-0.5 w-1/2 bg-gradient-to-r from-transparent via-[#3b82f6] to-transparent shadow-2xl transition-all duration-500 group-hover:h-px"></div>
-              <span className="relative text-white">Why ByteAegis</span>
+              <span className="relative text-white">Why byteaegis</span>
             </button>
           </div>
           <h2 className="from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 mt-5 bg-gradient-to-r bg-clip-text text-center text-2xl sm:text-4xl font-semibold tracking-tighter text-transparent md:text-[54px] md:leading-[60px] relative z-10">

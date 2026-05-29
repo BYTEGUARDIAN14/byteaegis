@@ -84,7 +84,7 @@ export default function Home() {
           href="/"
           rel="noopener noreferrer"
         >
-          <img src="/logo-blue.svg" alt="ByteAegis Logo" className="w-8 h-8" />
+          <img src="/logo-blue.svg" alt="byteaegis Logo" className="w-8 h-8" />
           <span className="text-foreground font-bold hidden sm:inline">byteaegis</span>
         </a>
 
@@ -117,7 +117,7 @@ export default function Home() {
 
         <div className="flex items-center gap-4 relative z-50">
           <a
-            href="mailto:hello@byteaegis.in"
+            href="mailto:hello@byteaegis.online"
             className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm"
           >
             Contact Us
@@ -132,7 +132,7 @@ export default function Home() {
           href="/"
           rel="noopener noreferrer"
         >
-          <img src="/logo-blue.svg" alt="ByteAegis Logo" className="w-7 h-7" />
+          <img src="/logo-blue.svg" alt="byteaegis Logo" className="w-7 h-7" />
         </a>
 
         <button
@@ -185,7 +185,7 @@ export default function Home() {
               </button>
               <div className="border-t border-border/50 pt-4 mt-4 flex flex-col space-y-3">
                 <a
-                  href="mailto:hello@byteaegis.in"
+                  href="mailto:hello@byteaegis.online"
                   className="px-4 py-3 text-lg font-bold text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Contact Us
@@ -212,7 +212,7 @@ export default function Home() {
         <PricingSection />
       </div>
 
-      {/* Why ByteAegis Section */}
+      {/* Why byteaegis Section */}
       <div id="why-byteaegis">
         <TestimonialsSection />
       </div>

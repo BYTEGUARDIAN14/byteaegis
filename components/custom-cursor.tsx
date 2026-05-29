@@ -83,7 +83,7 @@ export function CustomCursor() {
                   className="ml-2 min-w-max rounded-full px-2 py-1 text-xs whitespace-nowrap text-white shadow-lg border border-white/20"
                   style={{ backgroundColor: "#3b82f6" }}
                 >
-                  {label || "ByteAegis"}
+                  {label || "byteaegis"}
                 </motion.div>
               )}
             </AnimatePresence>

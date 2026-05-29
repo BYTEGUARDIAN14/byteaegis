@@ -13,29 +13,29 @@ export function FAQSection() {
 
   const faqs = [
     {
-      question: "What is ByteAegis?",
+      question: "What is byteaegis?",
       answer:
-        "ByteAegis is a service-based cybersecurity and software development startup founded by Mohamed Adhnaan J M, a computer science student from Tamil Nadu, India. We work with startups, small businesses, and development teams who need security-focused software built for them or who need their existing systems secured and hardened.",
+        "byteaegis is a service-based cybersecurity and software development startup founded by Mohamed Adhnaan J M, a computer science student from Tamil Nadu, India. We work with startups, small businesses, and development teams who need security-focused software built for them or who need their existing systems secured and hardened.",
     },
     {
-      question: "What services does ByteAegis offer?",
+      question: "What services does byteaegis offer?",
       answer:
         "We offer five core services: (1) Secure Web & Desktop Application Development — full-stack builds with security built in from day one. (2) Vulnerability Assessment & Code Auditing — identifying security flaws in your existing codebase with a prioritized remediation report. (3) DevSecOps & CI/CD Pipeline Setup — automating security scanning in your development workflow. (4) AI Integration for Security Workflows — building AI-powered threat analysis and risk scoring tools. (5) Security Consulting & Architecture Review — advising teams on best practices, penetration testing, and cloud hardening.",
     },
     {
-      question: "Who does ByteAegis work with?",
+      question: "Who does byteaegis work with?",
       answer:
         "We work with early-stage startups shipping fast who need a security-aware development partner, small businesses that need software built without cutting corners on security, and engineering teams that want to shift security left in their development process but don't know where to start.",
     },
     {
-      question: "How does ByteAegis handle projects end-to-end?",
+      question: "How does byteaegis handle projects end-to-end?",
       answer:
         "We handle the full scope of work — from requirement gathering to delivery. This includes design, development, testing, and deployment. Clients don't need to coordinate between multiple agencies or freelancers. We take ownership of the entire engagement.",
     },
     {
-      question: "How do I get started with ByteAegis?",
+      question: "How do I get started with byteaegis?",
       answer:
-        "Simply reach out via email at hello@byteaegis.in. Describe your project or security challenge and we'll get back to you to discuss next steps. You can also find us on GitHub at github.com/BYTEGUARDIAN14.",
+        "Simply reach out via email at hello@byteaegis.online. Describe your project or security challenge and we'll get back to you to discuss next steps. You can also find us on GitHub at github.com/BYTEGUARDIAN14.",
     },
   ]
 
@@ -70,7 +70,7 @@ export function FAQSection() {
         >
           Common Questions About{" "}
           <span className="bg-gradient-to-b from-foreground via-rose-200 to-primary bg-clip-text text-transparent">
-            ByteAegis
+            byteaegis
           </span>
         </motion.h2>
 
