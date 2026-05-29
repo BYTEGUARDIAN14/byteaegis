@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/BYTEGUARDIAN14/byteaegis/master/public/logo-blue.svg" alt="byteaegis logo" width="120" />
+  <img src="https://raw.githubusercontent.com/BYTEGUARDIAN14/byteaegis/master/public/android-chrome-512x512.png" alt="byteaegis logo" width="120" />
   <h1>byteaegis</h1>
   <p><strong>Cybersecurity & Secure Software Development</strong></p>
   <p>
@@ -50,4 +50,4 @@ Visit `http://localhost:3000` to view the site.
 ## 📬 Contact
 
 Have a project in mind or need your codebase secured? 
-Reach out to us: **[hello@byteaegis.online](mailto:hello@byteaegis.online)**
+Reach out to us: **[byteguardx@gmail.com](mailto:byteguardx@gmail.com)**
