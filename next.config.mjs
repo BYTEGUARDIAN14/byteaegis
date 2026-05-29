@@ -35,9 +35,10 @@ const securityHeaders = [
       "default-src 'self'",
 
       // Next.js needs unsafe-inline + unsafe-eval in dev; tighten in prod
+      // Next.js needs unsafe-inline + unsafe-eval in dev; tighten in prod
       isDev
-        ? "script-src 'self' 'unsafe-eval' 'unsafe-inline'"
-        : "script-src 'self' 'unsafe-inline'",
+        ? "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://challenges.cloudflare.com"
+        : "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
 
       // Tailwind + framer-motion inject inline styles
       "style-src 'self' 'unsafe-inline'",
@@ -59,6 +60,9 @@ const securityHeaders = [
 
       // XHR / fetch only to same origin
       "connect-src 'self'",
+
+      // Allow Cloudflare Turnstile iframes
+      "frame-src 'self' https://challenges.cloudflare.com",
 
       // Disallow embedding this site in iframes elsewhere
       "frame-ancestors 'none'",
