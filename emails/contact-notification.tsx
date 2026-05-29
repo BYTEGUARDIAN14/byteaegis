@@ -65,7 +65,7 @@ export default function ContactNotificationEmail({
                   <span className="text-gray-500 font-medium w-24 inline-block">Name:</span> {name}
                 </Text>
                 <Text className="text-gray-900 text-base mb-2 m-0">
-                  <span className="text-gray-500 font-medium w-24 inline-block">Email:</span> <a href={`mailto:${email}`} className="text-blue-600 no-underline hover:underline">{email}</a>
+                  <span className="text-gray-500 font-medium w-24 inline-block">Email:</span> <a href={`mailto:${email}`} className="text-blue-600 no-underline">{email}</a>
                 </Text>
                 {company && (
                   <Text className="text-gray-900 text-base mb-2 m-0">
