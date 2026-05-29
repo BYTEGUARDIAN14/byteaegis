@@ -33,14 +33,11 @@ export default function ContactConfirmationEmail({
             {/* Header / Logo Area */}
             <Section className="bg-black py-8 text-center border-b border-white/5">
               <Img
-                src="https://raw.githubusercontent.com/BYTEGUARDIAN14/byteaegis/master/public/logo-blue.png"
-                width="48"
-                height="48"
-                alt="byteaegis"
+                src="https://byteaegis.online/android-chrome-192x192.png"
+                width="64"
+                height="64"
+                alt="byteaegis logo"
                 className="mx-auto"
-                // Note: SVG is not supported in many email clients, falling back to a PNG URL if you have one, 
-                // but we will use the raw github SVG for now (some clients support it).
-                // Actually, I'll use the raw svg from your repo:
               />
               <Heading className="text-white text-2xl font-bold mt-4 tracking-tight">byteaegis</Heading>
             </Section>

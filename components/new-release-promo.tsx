@@ -1,7 +1,8 @@
 "use client"
 
-export function NewReleasePromo() {
 import Link from "next/link"
+
+export function NewReleasePromo() {
   return (
     <section className="mt-12 w-full">
       <div className="mx-auto max-w-4xl rounded-[40px] border border-black/5 dark:border-white/20 p-2 shadow-sm">
