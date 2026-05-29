@@ -36,7 +36,7 @@ export default function Home() {
       if (element) {
         const headerOffset = 120
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-        const offsetPosition = elementPosition, headerOffset
+        const offsetPosition = elementPosition - headerOffset
 
         window.scrollTo({
           top: offsetPosition,
@@ -51,7 +51,7 @@ export default function Home() {
     if (element) {
       const headerOffset = 120
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-      const offsetPosition = elementPosition, headerOffset
+      const offsetPosition = elementPosition - headerOffset
       window.scrollTo({ top: offsetPosition, behavior: "smooth" })
     }
   }
