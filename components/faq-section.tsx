@@ -35,7 +35,7 @@ export function FAQSection() {
     {
       question: "How do I get started with byteaegis?",
       answer:
-        "Simply reach out via email at hello@byteaegis.online. Describe your project or security challenge and we'll get back to you to discuss next steps. You can also find us on GitHub at github.com/BYTEGUARDIAN14.",
+        "Simply reach out via our contact page. Describe your project or security challenge and we'll get back to you to discuss next steps. You can also find us on GitHub at github.com/BYTEGUARDIAN14.",
     },
   ]
 

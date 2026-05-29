@@ -106,8 +106,8 @@ export default function ContactPage() {
             <div className="space-y-8 p-8 bg-white/[0.02] border border-white/5 rounded-2xl hidden md:block">
               <div>
                 <h3 className="text-xs font-bold text-white/40 uppercase tracking-widest mb-2">Direct Contact</h3>
-                <a href="mailto:hello@byteaegis.online" className="text-lg text-white hover:text-[#3b82f6] transition-colors">
-                  hello@byteaegis.online
+                <a href="mailto:byteguardx@gmail.com" className="text-lg text-white hover:text-[#3b82f6] transition-colors">
+                  Send an email
                 </a>
               </div>
               <div className="h-px w-full bg-white/5" />
