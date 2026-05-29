@@ -2,7 +2,7 @@
 
 import { Marquee } from "@/components/magicui/marquee"
 
-// Simple Icons CDN - returns the official brand SVG in the given hex colour
+// Simple Icons CDN, returns the official brand SVG in the given hex colour
 const si = (slug: string, hex: string) =>
   `https://cdn.simpleicons.org/${slug}/${hex}`
 

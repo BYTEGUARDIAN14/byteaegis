@@ -29,7 +29,7 @@ export default function Hero() {
           >
             <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm">
               <Shield className="h-4 w-4" />
-              Security-First Software Development - Tamil Nadu, India
+              Security-First Software Development | Tamil Nadu, India
             </Badge>
           </motion.div>
 
@@ -56,7 +56,7 @@ export default function Hero() {
           >
             byteaegis is a cybersecurity and software development startup working with startups, small businesses,
             and development teams who need security-focused software built or their existing systems hardened.
-            Security isn&apos;t an add-on - it&apos;s fundamental to every engagement we take on.
+            Security isn&apos;t an add-on, it&apos;s fundamental to every engagement we take on.
           </motion.p>
 
           <motion.div

@@ -1,14 +1,70 @@
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
+import { Ratelimit } from "@upstash/ratelimit"
+import { Redis } from "@upstash/redis"
 import ContactConfirmationEmail from "@/emails/contact-confirmation"
 import ContactNotificationEmail from "@/emails/contact-notification"
 
-// Initialize Resend with the API key from environment variables
+// Initialize Upstash Redis for Rate Limiting (3 requests per hour per IP)
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL || "",
+  token: process.env.UPSTASH_REDIS_REST_TOKEN || "",
+})
+
+const ratelimit = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(3, "1 h"),
+})
+
+// Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY)
+
+// Cloudflare Turnstile Verification Helper
+async function verifyTurnstile(token: string) {
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `secret=${process.env.TURNSTILE_SECRET_KEY}&response=${token}`,
+  })
+  const data = await res.json()
+  return data.success
+}
 
 export async function POST(req: Request) {
   try {
-    const { name, email, company, services, budget, inquiry } = await req.json()
+    // 1. IP-Based Rate Limiting via Redis
+    const ip = req.headers.get("x-forwarded-for") || "anonymous"
+    
+    // Only enforce rate limiting if Redis credentials are provided
+    if (process.env.UPSTASH_REDIS_REST_URL) {
+      const { success } = await ratelimit.limit(ip)
+      if (!success) {
+        return NextResponse.json(
+          { error: "Too many requests. Please try again later." },
+          { status: 429 }
+        )
+      }
+    }
+
+    const { name, email, company, services, budget, inquiry, turnstileToken } = await req.json()
+
+    // 2. Bot Protection via Cloudflare Turnstile
+    if (process.env.TURNSTILE_SECRET_KEY) {
+      if (!turnstileToken) {
+        return NextResponse.json(
+          { error: "Security check missing. Please complete the captcha." },
+          { status: 400 }
+        )
+      }
+      
+      const isHuman = await verifyTurnstile(turnstileToken)
+      if (!isHuman) {
+        return NextResponse.json(
+          { error: "Security check failed. Automated bots are not allowed." },
+          { status: 403 }
+        )
+      }
+    }
 
     // Basic validation
     if (!name || !email || !inquiry) {
@@ -18,7 +74,7 @@ export async function POST(req: Request) {
       )
     }
 
-    // 1. Send Notification Email to Founder
+    // 3. Send Notification Email to Founder
     await resend.emails.send({
       from: "byteaegis Web <hello@byteaegis.online>", // Must be a verified domain in Resend
       to: "byteguardx@gmail.com",
@@ -27,11 +83,11 @@ export async function POST(req: Request) {
       replyTo: email,
     })
 
-    // 2. Send Confirmation Email to User
+    // 4. Send Confirmation Email to User
     await resend.emails.send({
       from: "byteaegis <hello@byteaegis.online>", // Must be a verified domain in Resend
       to: email,
-      subject: "We received your inquiry - byteaegis",
+      subject: "We received your inquiry, byteaegis",
       react: ContactConfirmationEmail({ name, inquiry }),
     })
 

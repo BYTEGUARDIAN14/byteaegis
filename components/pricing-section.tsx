@@ -22,7 +22,7 @@ const clients = [
     name: "Small Businesses",
     tagline: "Built Right",
     Icon: Building2,
-    description: "Need software built without cutting corners - security included from day one, not reviewed after.",
+    description: "Need software built without cutting corners, security included from day one, not reviewed after.",
     features: [
       "Full-stack web & desktop dev",
       "Code auditing & hardening",
@@ -75,7 +75,7 @@ export function PricingSection() {
             <span className="text-[#3b82f6]"> Security Seriously</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto">
-            Every engagement is handled end-to-end - from requirement gathering to delivery.
+            Every engagement is handled end-to-end, from requirement gathering to delivery.
           </p>
         </motion.div>
 
@@ -152,7 +152,7 @@ export function PricingSection() {
           transition={{ delay: 0.4 }}
           className="text-center text-white/30 text-sm mt-10"
         >
-          Every project is taken on end-to-end - design, development, testing, and deployment.
+          Every project is taken on end-to-end, design, development, testing, and deployment.
         </motion.p>
       </div>
     </section>

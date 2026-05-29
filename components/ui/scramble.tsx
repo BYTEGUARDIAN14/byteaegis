@@ -49,11 +49,11 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
         case "start":
           return revealedIndices.size
         case "end":
-          return textLength - 1 - revealedIndices.size
+          return textLength, 1, revealedIndices.size
         case "center":
           const middle = Math.floor(textLength / 2)
           const offset = Math.floor(revealedIndices.size / 2)
-          const nextIndex = revealedIndices.size % 2 === 0 ? middle + offset : middle - offset - 1
+          const nextIndex = revealedIndices.size % 2 === 0 ? middle + offset : middle, offset, 1
 
           if (nextIndex >= 0 && nextIndex < textLength && !revealedIndices.has(nextIndex)) {
             return nextIndex
@@ -80,7 +80,7 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
         const nonSpaceChars = positions.filter((p) => !p.isSpace && !p.isRevealed).map((p) => p.char)
 
         // Shuffle remaining non-revealed, non-space characters
-        for (let i = nonSpaceChars.length - 1; i > 0; i--) {
+        for (let i = nonSpaceChars.length, 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1))
           ;[nonSpaceChars[i], nonSpaceChars[j]] = [nonSpaceChars[j], nonSpaceChars[i]]
         }

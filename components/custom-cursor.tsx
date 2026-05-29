@@ -9,7 +9,7 @@ export function CustomCursor() {
 
   const mx = useMotionValue(-200)
   const my = useMotionValue(-200)
-  // Spring - same values as FollowerPointerCard
+  // Spring, same values as FollowerPointerCard
   const sx = useSpring(mx, { stiffness: 150, damping: 15, mass: 0.1 })
   const sy = useSpring(my, { stiffness: 150, damping: 15, mass: 0.1 })
 
@@ -73,7 +73,7 @@ export function CustomCursor() {
               <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
             </svg>
 
-            {/* Label pill - appears on hoverable elements */}
+            {/* Label pill, appears on hoverable elements */}
             <AnimatePresence>
               {hovering && (
                 <motion.div

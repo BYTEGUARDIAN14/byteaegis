@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Send, ArrowLeft, Loader2, CheckCircle2, ShieldCheck, Code, Settings, Cpu, Briefcase } from "lucide-react"
 import Link from "next/link"
 import { CustomCursor } from "@/components/custom-cursor"
+import { Turnstile } from "@marsidev/react-turnstile"
 
 const SERVICES = [
   { id: "dev", label: "Secure Development", icon: Code },
@@ -16,9 +17,9 @@ const SERVICES = [
 
 const BUDGETS = [
   "Under $5k",
-  "$5k - $10k",
-  "$10k - $25k",
-  "$25k - $50k",
+  "$5k, $10k",
+  "$10k, $25k",
+  "$25k, $50k",
   "$50k+"
 ]
 
@@ -30,6 +31,7 @@ export default function ContactPage() {
   // Custom Form State
   const [selectedServices, setSelectedServices] = useState<string[]>([])
   const [selectedBudget, setSelectedBudget] = useState<string>("")
+  const [turnstileToken, setTurnstileToken] = useState<string>("")
 
   const toggleService = (id: string) => {
     setSelectedServices(prev => 
@@ -50,6 +52,7 @@ export default function ContactPage() {
       services: selectedServices,
       budget: selectedBudget,
       inquiry: formData.get("inquiry"),
+      turnstileToken,
     }
 
     try {
@@ -263,9 +266,20 @@ export default function ContactPage() {
                   </div>
                 )}
 
+                {/* Cloudflare Turnstile */}
+                {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+                  <div className="pt-2">
+                    <Turnstile 
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} 
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      options={{ theme: 'dark' }}
+                    />
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
                   className="w-full bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold py-4 md:py-5 rounded-xl flex items-center justify-center gap-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed group text-lg mt-8"
                 >
                   {isSubmitting ? (
