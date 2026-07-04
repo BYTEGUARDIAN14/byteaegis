@@ -9,7 +9,6 @@ import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
 import { StickyFooter } from "@/components/sticky-footer"
 import { CustomCursor } from "@/components/custom-cursor"
-import SideRays from "@/components/ui/side-rays"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -67,23 +66,6 @@ export default function Home() {
           background: "radial-gradient(ellipse 50% 35% at 50% 0%, rgba(226, 232, 240, 0.12), transparent 60%), #000000",
         }}
       />
-
-      {/* SideRays — fixed full-viewport background behind everything */}
-      <div className="fixed inset-0 z-[1] pointer-events-none">
-        <SideRays
-          speed={2.5}
-          rayColor1="#3B82F6"
-          rayColor2="#155ba9"
-          intensity={2}
-          spread={2}
-          origin="top-left"
-          tilt={0}
-          saturation={1.5}
-          blend={0.75}
-          falloff={1.6}
-          opacity={1.0}
-        />
-      </div>
 
       {/* Desktop Header */}
       <header

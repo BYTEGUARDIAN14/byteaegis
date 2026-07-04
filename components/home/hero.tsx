@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Shield } from "lucide-react"
 import Link from "next/link"
+import SideRays from "@/components/ui/side-rays"
 
 
 export default function Hero() {
@@ -19,7 +20,24 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex flex-col">
+    <section className="relative overflow-hidden min-h-[100vh] flex flex-col">
+      {/* SideRays background */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
+        <SideRays
+          speed={2.5}
+          rayColor1="#3B82F6"
+          rayColor2="#155ba9"
+          intensity={2}
+          spread={2}
+          origin="top-left"
+          tilt={0}
+          saturation={1.5}
+          blend={0.75}
+          falloff={1.6}
+          opacity={1.0}
+        />
+      </div>
+
       <div className="container mx-auto px-4 py-24 sm:py-32 relative z-10 flex-1 flex flex-col">
         <div className="mx-auto max-w-4xl text-center flex-1 flex flex-col justify-center">
 
