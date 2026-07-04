@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import "./globals.css"
+import { SplashScreen } from "@/components/splash-screen"
 
 export const metadata: Metadata = {
   title: "byteaegis, Cybersecurity & Secure Software Development",
@@ -26,7 +27,10 @@ html {
 }
         `}</style>
       </head>
-      <body className="dark">{children}</body>
+      <body className="dark">
+        <SplashScreen />
+        {children}
+      </body>
     </html>
   )
 }
