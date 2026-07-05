@@ -2,6 +2,7 @@
 import { motion } from "framer-motion"
 import { Rocket, Building2, Code2, Check } from "lucide-react"
 import Link from "next/link"
+import { RevealHeading } from "@/components/ui/reveal-heading"
 
 const clients = [
   {
@@ -60,25 +61,21 @@ export function PricingSection() {
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 text-sm text-white/60">
             <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse" />
             Who We Work With
           </div>
-          <h2 className="mb-4 text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
-            Built for Teams That Take<br className="hidden sm:block" />
-            Security Seriously
-          </h2>
+          <div className="mb-8">
+            <RevealHeading>
+              Built for Teams That Take<br className="hidden sm:block" />
+              Security Seriously
+            </RevealHeading>
+          </div>
           <p className="text-white/50 max-w-xl mx-auto">
             Every engagement is handled end-to-end, from requirement gathering to delivery.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6">

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Plus, Minus } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { RevealHeading } from "@/components/ui/reveal-heading"
 
 export function FAQSection() {
   const [openItems, setOpenItems] = useState<number[]>([])
@@ -61,15 +62,9 @@ export function FAQSection() {
           </div>
         </motion.div>
 
-        <motion.h2
-          className="mx-auto mt-6 mb-8 text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          Common Questions About byteaegis
-        </motion.h2>
+        <div className="mx-auto mt-6 mb-8 max-w-xl text-center">
+          <RevealHeading>Common Questions About byteaegis</RevealHeading>
+        </div>
 
         <div className="mx-auto mt-12 flex max-w-xl flex-col gap-6">
           {faqs.map((faq, index) => (
