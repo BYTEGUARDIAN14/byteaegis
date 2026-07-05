@@ -3,12 +3,12 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { cn } from "@/lib/utils"
+import React from "react"
 
 interface RevealHeadingProps {
   text: string
   className?: string
   delay?: number
-  /** Stagger per character in seconds. Default 0.022 */
   staggerDelay?: number
 }
 
@@ -16,44 +16,49 @@ export function RevealHeading({
   text,
   className,
   delay = 0,
-  staggerDelay = 0.022,
+  staggerDelay = 0.02,
 }: RevealHeadingProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const chars = text.split("")
+  const isInView = useInView(ref, { once: true, amount: 0 })
+  
+  const words = text.split(" ")
+  let charCount = 0
 
   return (
-    <span ref={ref} aria-label={text} className={cn("", className)}>
-      {chars.map((char, i) =>
-        char === " " ? (
-          <span key={i} className="inline-block select-none">&nbsp;</span>
-        ) : (
-          /*
-           * No overflow:hidden here — that breaks background-clip:text on the parent h2.
-           * Instead we use clipPath to mask the reveal so the gradient stays intact.
-           * inset(0 -5% -25% 0) extends bottom/sides beyond the glyph bounds to
-           * avoid clipping descenders and italic overhang.
-           */
-          <motion.span
-            key={i}
-            className="inline-block"
-            style={{ willChange: "clip-path, opacity" }}
-            initial={{ clipPath: "inset(0% -5% 100% -5%)", opacity: 0 }}
-            animate={
-              isInView
-                ? { clipPath: "inset(0% -5% -25% -5%)", opacity: 1 }
-                : { clipPath: "inset(0% -5% 100% -5%)", opacity: 0 }
-            }
-            transition={{
-              duration: 0.5,
-              delay: delay + i * staggerDelay,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            {char}
-          </motion.span>
+    <span ref={ref} aria-label={text} className={cn("inline-block", className)}>
+      {words.map((word, wordIndex) => {
+        const isLastWord = wordIndex === words.length - 1
+        const wordChars = word.split("")
+        const startIndex = charCount
+        charCount += wordChars.length + 1 // +1 for the space
+
+        return (
+          <React.Fragment key={wordIndex}>
+            <span className="inline-block whitespace-nowrap">
+              {wordChars.map((char, charIndex) => (
+                <motion.span
+                  key={charIndex}
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={
+                    isInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 20 }
+                  }
+                  transition={{
+                    duration: 0.5,
+                    delay: delay + (startIndex + charIndex) * staggerDelay,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
+            {!isLastWord && " "}
+          </React.Fragment>
         )
-      )}
+      })}
     </span>
   )
 }
