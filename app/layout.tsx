@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 import { SplashScreen } from "@/components/splash-screen"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "byteaegis, Cybersecurity & Secure Software Development",
@@ -32,6 +33,7 @@ html {
         <SplashScreen />
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
