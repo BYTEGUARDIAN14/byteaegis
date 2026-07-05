@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 import { SplashScreen } from "@/components/splash-screen"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "byteaegis, Cybersecurity & Secure Software Development",
@@ -30,6 +31,7 @@ html {
       <body className="dark overflow-x-hidden">
         <SplashScreen />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   )
