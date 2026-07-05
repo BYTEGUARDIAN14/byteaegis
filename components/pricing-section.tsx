@@ -71,9 +71,9 @@ export function PricingSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse" />
             Who We Work With
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
+          <h2 className="mb-4 text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
             Built for Teams That Take<br className="hidden sm:block" />
-            <span className="text-[#3b82f6]"> Security Seriously</span>
+            Security Seriously
           </h2>
           <p className="text-white/50 max-w-xl mx-auto">
             Every engagement is handled end-to-end, from requirement gathering to delivery.

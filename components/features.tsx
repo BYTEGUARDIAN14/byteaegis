@@ -155,7 +155,7 @@ export default function Features() {
           <p className="text-xs font-mono tracking-[0.25em] text-white/40 uppercase mb-4">
             Professional Offerings &amp; Specialized Skills
           </p>
-          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter text-white leading-none">
+          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
             Services
           </h2>
         </motion.div>
