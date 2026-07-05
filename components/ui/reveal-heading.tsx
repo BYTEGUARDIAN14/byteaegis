@@ -1,68 +1,44 @@
 "use client"
-import { motion } from "framer-motion"
-import React from "react"
 
-export function RevealHeading({ children }: { children: React.ReactNode }) {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
+import { cn } from "@/lib/utils"
 
-  const childVariant = {
-    hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
-    show: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-    },
-  }
+interface RevealHeadingProps {
+  text: string
+  className?: string
+  delay?: number
+  staggerDelay?: number
+}
 
-  const renderWords = (content: React.ReactNode): React.ReactNode => {
-    if (typeof content === "string") {
-      return content.split(" ").map((word, i) => (
-        <span key={i} className="inline-block mr-[0.25em] whitespace-nowrap">
-          <motion.span className="inline-block" variants={childVariant}>
+export function RevealHeading({
+  text,
+  className,
+  delay = 0,
+  staggerDelay = 0.08,
+}: RevealHeadingProps) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const words = text.split(" ")
+
+  return (
+    <span ref={ref} className={cn("inline-flex flex-wrap justify-center gap-x-[0.25em] gap-y-0", className)}>
+      {words.map((word, i) => (
+        <span key={i} className="overflow-hidden inline-block">
+          <motion.span
+            className="inline-block"
+            initial={{ y: "110%", opacity: 0 }}
+            animate={isInView ? { y: "0%", opacity: 1 } : { y: "110%", opacity: 0 }}
+            transition={{
+              duration: 0.55,
+              delay: delay + i * staggerDelay,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
             {word}
           </motion.span>
         </span>
-      ))
-    }
-
-    if (Array.isArray(content)) {
-      return content.map((item, i) => <React.Fragment key={i}>{renderWords(item)}</React.Fragment>)
-    }
-
-    if (React.isValidElement(content)) {
-      if (content.type === "br") {
-        return content
-      }
-      return (
-        <span className="inline-block mr-[0.25em] whitespace-nowrap">
-          <motion.span className="inline-block" variants={childVariant}>
-            {content}
-          </motion.span>
-        </span>
-      )
-    }
-
-    return content
-  }
-
-  return (
-    <motion.h2
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-50px" }}
-      className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10"
-    >
-      {renderWords(children)}
-    </motion.h2>
+      ))}
+    </span>
   )
 }
