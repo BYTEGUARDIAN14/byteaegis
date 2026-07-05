@@ -27,7 +27,7 @@ html {
 }
         `}</style>
       </head>
-      <body className="dark">
+      <body className="dark overflow-x-hidden">
         <SplashScreen />
         {children}
       </body>
