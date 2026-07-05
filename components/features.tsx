@@ -148,15 +148,12 @@ export default function Features() {
         {/* Header */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
           className="mb-16 sm:mb-20"
         >
           <p className="text-xs font-mono tracking-[0.25em] text-white/40 uppercase mb-4">
             Professional Offerings &amp; Specialized Skills
           </p>
-          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
             <RevealHeading text="Services" delay={0.1} />
           </h2>
         </motion.div>
