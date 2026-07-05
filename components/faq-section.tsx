@@ -63,13 +63,13 @@ export function FAQSection() {
         </motion.div>
 
         <motion.h2
-          className="mx-auto mt-6 mb-8 text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10"
+          className="mx-auto mt-6 mb-8 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10"
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0 }}
           viewport={{ once: true }}
         >
-          <RevealHeading text="Common Questions About byteaegis" delay={0.1} />
+          <RevealHeading text="Common Questions" delay={0.1} />
         </motion.h2>
 
         <div className="mx-auto mt-12 flex max-w-xl flex-col gap-6">
