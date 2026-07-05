@@ -110,8 +110,8 @@ export function TechStack() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="container mx-auto px-4 mb-10 text-center">
-        <h2 className="mb-12 text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
-          <RevealHeading text="Technologies We Work With" delay={0.1} />
+        <h2 className="mb-6 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
+          <RevealHeading text="Our Tech Stack" delay={0.1} />
         </h2>
         <p className="mt-2 text-sm text-white/30">
           Hover to reveal brand colours
