@@ -19,40 +19,39 @@ export function RevealHeading({
   staggerDelay = 0.022,
 }: RevealHeadingProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.25 })
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const chars = text.split("")
 
   return (
     <span ref={ref} aria-label={text} className={cn("", className)}>
       {chars.map((char, i) =>
         char === " " ? (
-          /* Preserve spaces as non-breaking so line-wrap still works */
           <span key={i} className="inline-block select-none">&nbsp;</span>
         ) : (
-          <span
+          /*
+           * No overflow:hidden here — that breaks background-clip:text on the parent h2.
+           * Instead we use clipPath to mask the reveal so the gradient stays intact.
+           * inset(0 -5% -25% 0) extends bottom/sides beyond the glyph bounds to
+           * avoid clipping descenders and italic overhang.
+           */
+          <motion.span
             key={i}
-            /* overflow-hidden clips the slide-up; extra padding-bottom prevents descender crop */
-            className="inline-block overflow-hidden"
-            style={{ paddingBottom: "0.12em", marginBottom: "-0.12em", lineHeight: "inherit" }}
+            className="inline-block"
+            style={{ willChange: "clip-path, opacity" }}
+            initial={{ clipPath: "inset(0% -5% 100% -5%)", opacity: 0 }}
+            animate={
+              isInView
+                ? { clipPath: "inset(0% -5% -25% -5%)", opacity: 1 }
+                : { clipPath: "inset(0% -5% 100% -5%)", opacity: 0 }
+            }
+            transition={{
+              duration: 0.5,
+              delay: delay + i * staggerDelay,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
-            <motion.span
-              className="inline-block"
-              style={{ willChange: "transform" }}
-              initial={{ y: "110%", opacity: 0 }}
-              animate={
-                isInView
-                  ? { y: "0%", opacity: 1 }
-                  : { y: "110%", opacity: 0 }
-              }
-              transition={{
-                duration: 0.42,
-                delay: delay + i * staggerDelay,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              {char}
-            </motion.span>
-          </span>
+            {char}
+          </motion.span>
         )
       )}
     </span>
