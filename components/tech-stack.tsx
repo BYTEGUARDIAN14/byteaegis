@@ -1,7 +1,6 @@
 "use client"
 
 import { Marquee } from "@/components/magicui/marquee"
-import { motion } from "framer-motion"
 import { RevealHeading } from "@/components/ui/reveal-heading"
 
 // Simple Icons CDN, returns the official brand SVG in the given hex colour
@@ -111,9 +110,9 @@ export function TechStack() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="container mx-auto px-4 mb-10 text-center">
-        <div className="mb-8">
-          <RevealHeading>Technologies We Work With</RevealHeading>
-        </div>
+        <h2 className="mb-12 text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
+          <RevealHeading text="Technologies We Work With" delay={0.1} />
+        </h2>
         <p className="mt-2 text-sm text-white/30">
           Hover to reveal brand colours
         </p>

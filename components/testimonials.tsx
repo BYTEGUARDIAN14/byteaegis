@@ -1,5 +1,4 @@
 import { Marquee } from "@/components/magicui/marquee"
-import { motion } from "framer-motion"
 import { RevealHeading } from "@/components/ui/reveal-heading"
 
 const whybyteaegis = [
@@ -94,7 +93,9 @@ export function TestimonialsSection() {
               <span className="relative text-white">Why byteaegis</span>
             </button>
           </div>
-          <RevealHeading>Security-First, Every Single Time</RevealHeading>
+          <h2 className="mt-5 text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
+            <RevealHeading text="Security-First, Every Single Time" delay={0.1} />
+          </h2>
 
           <p className="mt-5 relative z-10 text-center text-sm sm:text-lg text-zinc-500">
             We take on client projects end-to-end and treat security not as an add-on, but as a fundamental part of every engagement.

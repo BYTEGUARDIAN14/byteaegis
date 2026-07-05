@@ -2,9 +2,9 @@
 
 import { useState, useRef } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import { RevealHeading } from "@/components/ui/reveal-heading"
 import { ArrowUpRight, Code2, ShieldCheck, GitBranch, Cloud, Brain, Smartphone } from "lucide-react"
 import Link from "next/link"
+import { RevealHeading } from "@/components/ui/reveal-heading"
 
 const services = [
   {
@@ -146,12 +146,20 @@ export default function Features() {
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
 
         {/* Header */}
-        <div className="mb-16 sm:mb-20">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-16 sm:mb-20"
+        >
           <p className="text-xs font-mono tracking-[0.25em] text-white/40 uppercase mb-4">
             Professional Offerings &amp; Specialized Skills
           </p>
-          <RevealHeading>Services</RevealHeading>
-        </div>
+          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
+            <RevealHeading text="Services" delay={0.1} />
+          </h2>
+        </motion.div>
 
         {/* Service rows */}
         <div>
