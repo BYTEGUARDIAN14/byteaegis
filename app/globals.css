@@ -161,7 +161,35 @@ body {
 html {
   background-color: #1E1D1B;
   font-family: var(--font-sans);
+  /* Firefox */
+  scrollbar-color: #C9FF3F #2A2825;
+  scrollbar-width: thin;
 }
+
+/* Webkit (Chrome, Safari, Edge) custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2A2825;
+  border-left: 1px solid #3D3B37;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9FF3F;
+  border: 2px solid #2A2825;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4ff52;
+}
+
+::-webkit-scrollbar-corner {
+  background: #2A2825;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Space Grotesk", ui-sans-serif, sans-serif;
