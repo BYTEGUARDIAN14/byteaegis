@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import SideRays from "@/components/ui/side-rays"
+import DotGrid from "@/components/ui/dot-grid"
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
@@ -19,20 +19,16 @@ export default function Hero() {
       className="relative overflow-hidden min-h-[100vh] flex flex-col"
       style={{ backgroundColor: "#1E1D1B" }}
     >
-      {/* SideRays — acid green palette */}
-      <div className="absolute inset-0 z-[1] pointer-events-none">
-        <SideRays
-          speed={2.5}
-          rayColor1="#C9FF3F"
-          rayColor2="#7AB800"
-          intensity={1.4}
-          spread={2}
-          origin="top-left"
-          tilt={0}
-          saturation={1.2}
-          blend={0.6}
-          falloff={1.8}
-          opacity={0.55}
+      {/* DotGrid — acid green palette */}
+      <div className="absolute inset-0 z-[1] opacity-80">
+        <DotGrid
+          dotSize={4}
+          gap={36}
+          baseColor="#3D3B37"
+          activeColor="#C9FF3F"
+          proximity={180}
+          shockRadius={250}
+          shockStrength={5}
         />
       </div>
 
