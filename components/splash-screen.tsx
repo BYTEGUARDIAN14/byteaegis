@@ -35,25 +35,7 @@ export function SplashScreen() {
               style={{ backgroundColor: "#C9FF3F", WebkitMask: "url(/logo-blue.svg) center/contain no-repeat", mask: "url(/logo-blue.svg) center/contain no-repeat" }}
               aria-label="byteaegis Logo"
             />
-            <motion.div
-              className="flex items-center gap-1"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
-              <span
-                className="text-xs tracking-widest uppercase"
-                style={{ fontFamily: "'JetBrains Mono', monospace", color: "#C9FF3F" }}
-              >
-                byteaegis
-              </span>
-              <motion.span
-                className="inline-block w-[2px] h-[14px] ml-1"
-                style={{ backgroundColor: "#C9FF3F" }}
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-              />
-            </motion.div>
+
           </div>
         </motion.div>
       )}
