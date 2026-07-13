@@ -3,117 +3,122 @@
 import { Marquee } from "@/components/magicui/marquee"
 import { RevealHeading } from "@/components/ui/reveal-heading"
 
-// Simple Icons CDN, returns the official brand SVG in the given hex colour
-const si = (slug: string, hex: string) =>
-  `https://cdn.simpleicons.org/${slug}/${hex}`
+type Tech = { name: string; slug: string; hex: string }
 
-// GitHub org avatar (for tools not in Simple Icons)
-const gh = (org: string) =>
-  `https://github.com/${org}.png?size=80`
-
-type Tech = { name: string; url: string }
-
-const Logo = ({ name, url }: Tech) => (
+const Logo = ({ name, slug, hex }: Tech) => (
   <div
     title={name}
-    className="flex flex-col items-center gap-1.5 mx-6 opacity-60 hover:opacity-100 transition-opacity duration-300 select-none cursor-default"
+    className="group flex flex-col items-center gap-1.5 mx-6 select-none cursor-default"
   >
-    <img
-      src={url}
-      alt={name}
-      width={44}
-      height={44}
-      className="w-11 h-11 object-contain"
-      loading="lazy"
-      draggable={false}
-    />
-    <span className="text-[10px] text-white/30 font-medium whitespace-nowrap">
+    <div className="relative w-11 h-11">
+      {/* Brand color version (hidden by default, shown on hover) */}
+      <img 
+        src={`https://cdn.simpleicons.org/${slug}/${hex}`} 
+        alt={name} 
+        className="absolute inset-0 w-11 h-11 object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+        loading="lazy" 
+        draggable={false} 
+      />
+      {/* Acid green version (shown by default, hidden on hover) */}
+      <img 
+        src={`https://cdn.simpleicons.org/${slug}/C9FF3F`} 
+        className="absolute inset-0 w-11 h-11 object-contain transition-opacity duration-300 opacity-50 group-hover:opacity-0" 
+        alt={`${name} default`}
+        loading="lazy" 
+        draggable={false} 
+      />
+    </div>
+    <span 
+      className="text-[10px] font-medium whitespace-nowrap transition-colors duration-300 group-hover:text-[#C9FF3F]" 
+      style={{ fontFamily: "'JetBrains Mono', monospace", color: "#8A8680" }}
+    >
       {name}
     </span>
   </div>
 )
 
 const CategoryLabel = ({ label }: { label: string }) => (
-  <p className="text-center text-[11px] font-semibold tracking-widest uppercase text-white/25 mb-4">
+  <p className="text-center text-[11px] font-semibold tracking-widest uppercase mb-4"
+    style={{ fontFamily: "'JetBrains Mono', monospace", color: "#C9FF3F", opacity: 0.7 }}>
     {label}
   </p>
 )
 
 const categories: { label: string; reverse: boolean; items: Tech[] }[] = [
   {
-    label: "Languages & Frameworks",
-    reverse: false,
+    label: "Languages & Frameworks", reverse: false,
     items: [
-      { name: "JavaScript",   url: si("javascript",  "F7DF1E") },
-      { name: "TypeScript",   url: si("typescript",  "3178C6") },
-      { name: "React",        url: si("react",       "61DAFB") },
-      { name: "Next.js",      url: si("nextdotjs",   "ffffff") },
-      { name: "Python",       url: si("python",      "3776AB") },
-      { name: "Node.js",      url: si("nodedotjs",   "339933") },
-      { name: "Rust",         url: si("rust",        "ffffff") },
-      { name: "FastAPI",      url: si("fastapi",     "009688") },
-      { name: "Flask",        url: si("flask",       "ffffff") },
-      { name: "HTML5",        url: si("html5",       "E34F26") },
-      { name: "Redis",        url: si("redis",       "DC382D") },
-      { name: "Prismic CMS",  url: si("prismic",     "5163BA") },
+      { name: "JavaScript", slug: "javascript", hex: "F7DF1E" },
+      { name: "TypeScript", slug: "typescript", hex: "3178C6" },
+      { name: "React", slug: "react", hex: "61DAFB" },
+      { name: "Next.js", slug: "nextdotjs", hex: "ffffff" },
+      { name: "Python", slug: "python", hex: "3776AB" },
+      { name: "Node.js", slug: "nodedotjs", hex: "339933" },
+      { name: "Rust", slug: "rust", hex: "ffffff" },
+      { name: "FastAPI", slug: "fastapi", hex: "009688" },
+      { name: "Flask", slug: "flask", hex: "ffffff" },
+      { name: "HTML5", slug: "html5", hex: "E34F26" },
+      { name: "Redis", slug: "redis", hex: "DC382D" },
+      { name: "GraphQL", slug: "graphql", hex: "E10098" },
     ],
   },
   {
-    label: "UI Libraries",
-    reverse: true,
+    label: "UI Libraries", reverse: true,
     items: [
-      { name: "Tailwind CSS",   url: si("tailwindcss", "06B6D4") },
-      { name: "Framer Motion",  url: si("framer",      "0055FF") },
-      { name: "GSAP",           url: si("greensock",   "88CE02") },
-      { name: "Material UI",    url: si("mui",         "007FFF") },
-      { name: "Chart.js",       url: si("chartdotjs",  "FF6384") },
-      { name: "Bootstrap",      url: si("bootstrap",   "7952B3") },
-      { name: "CSS3",           url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "Tailwind CSS", slug: "tailwindcss", hex: "06B6D4" },
+      { name: "Framer Motion", slug: "framer", hex: "0055FF" },
+      { name: "GSAP", slug: "greensock", hex: "88CE02" },
+      { name: "Material UI", slug: "mui", hex: "007FFF" },
+      { name: "Chart.js", slug: "chartdotjs", hex: "FF6384" },
+      { name: "Bootstrap", slug: "bootstrap", hex: "7952B3" },
+      { name: "Sass", slug: "sass", hex: "CC6699" },
     ],
   },
   {
-    label: "DevSecOps Tools",
-    reverse: false,
+    label: "DevSecOps Tools", reverse: false,
     items: [
-      { name: "GitHub Actions", url: si("githubactions", "2088FF") },
-      { name: "GitLab CI/CD",   url: si("gitlab",        "FC6D26") },
-      { name: "Docker",         url: si("docker",        "2496ED") },
-      { name: "Kubernetes",     url: si("kubernetes",    "326CE5") },
-      { name: "Semgrep",        url: gh("semgrep") },
-      { name: "Snyk",           url: si("snyk",          "4C4A73") },
-      { name: "Prometheus",     url: si("prometheus",    "E6522C") },
-      { name: "Grafana",        url: si("grafana",       "F46800") },
-      { name: "Jenkins",        url: si("jenkins",       "D24939") },
+      { name: "GitHub Actions", slug: "githubactions", hex: "2088FF" },
+      { name: "GitLab CI", slug: "gitlab", hex: "FC6D26" },
+      { name: "Docker", slug: "docker", hex: "2496ED" },
+      { name: "Kubernetes", slug: "kubernetes", hex: "326CE5" },
+      { name: "Sentry", slug: "sentry", hex: "362D59" },
+      { name: "Snyk", slug: "snyk", hex: "4C4A73" },
+      { name: "Prometheus", slug: "prometheus", hex: "E6522C" },
+      { name: "Grafana", slug: "grafana", hex: "F46800" },
+      { name: "Datadog", slug: "datadog", hex: "632CA6" },
+      { name: "OWASP", slug: "owasp", hex: "ffffff" },
     ],
   },
   {
-    label: "IaC & Policy",
-    reverse: true,
+    label: "IaC & Cloud", reverse: true,
     items: [
-      { name: "Terraform",   url: si("terraform",          "7B42BC") },
-      { name: "Terragrunt",  url: gh("gruntwork-io")                 },
-      { name: "Ansible",     url: si("ansible",            "EE0000") },
-      { name: "Atlantis",    url: gh("runatlantis")                  },
-      { name: "Checkov",     url: gh("bridgecrewio")                 },
-      { name: "tfsec",       url: gh("aquasecurity")                 },
-      { name: "Terrascan",   url: gh("accurics")                     },
-      { name: "Regula",      url: gh("fugue")                        },
-      { name: "Conftest",    url: gh("open-policy-agent")              },
-      { name: "Sentinel",    url: si("hashicorp",         "ffffff")  },
+      { name: "Terraform", slug: "terraform", hex: "7B42BC" },
+      { name: "Pulumi", slug: "pulumi", hex: "8A3391" },
+      { name: "Ansible", slug: "ansible", hex: "EE0000" },
+      { name: "DigitalOcean", slug: "digitalocean", hex: "0080FF" },
+      { name: "Google Cloud", slug: "googlecloud", hex: "4285F4" },
+      { name: "Ubuntu", slug: "ubuntu", hex: "E95420" },
+      { name: "Cloudflare", slug: "cloudflare", hex: "F38020" },
+      { name: "Linux", slug: "linux", hex: "FCC624" },
+      { name: "HashiCorp", slug: "hashicorp", hex: "ffffff" },
+      { name: "Vercel", slug: "vercel", hex: "ffffff" },
     ],
   },
 ]
 
 export function TechStack() {
   return (
-    <section className="relative py-16 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section className="relative py-16 overflow-hidden" style={{ backgroundColor: "#1E1D1B" }}>
+      <div className="absolute inset-x-0 top-0 h-px" style={{ backgroundColor: "#3D3B37" }} />
 
       <div className="container mx-auto px-4 mb-10 text-center">
-        <h2 className="mb-6 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
+        <h2
+          className="mb-6 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black uppercase tracking-tighter leading-none text-center relative z-10"
+          style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#E8E6E1" }}
+        >
           <RevealHeading text="Our Tech Stack" delay={0.1} />
         </h2>
-        <p className="mt-2 text-sm text-white/30">
+        <p className="mt-2 text-sm" style={{ fontFamily: "'JetBrains Mono', monospace", color: "#8A8680" }}>
           Hover to reveal brand colours
         </p>
       </div>
@@ -124,16 +129,14 @@ export function TechStack() {
             <CategoryLabel label={cat.label} />
             <div className="[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
               <Marquee reverse={cat.reverse} pauseOnHover className="[--duration:40s]">
-                {cat.items.map((tech) => (
-                  <Logo key={tech.name} {...tech} />
-                ))}
+                {cat.items.map((tech) => <Logo key={tech.name} {...tech} />)}
               </Marquee>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px" style={{ backgroundColor: "#3D3B37" }} />
     </section>
   )
 }
