@@ -40,23 +40,26 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-6 w-full max-w-4xl"
+          className="mb-6 w-full max-w-5xl"
         >
           <h1
             id="main-title"
-            className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+            className="font-black uppercase"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              letterSpacing: "-0.035em",
+              letterSpacing: "-0.04em",
               color: "#E8E6E1",
-              lineHeight: "1.1",
+              lineHeight: "1.0",
+              fontSize: "clamp(2.4rem, 7.5vw, 6rem)",
             }}
           >
             We Build Software{" "}
-            <strong style={{ color: "#C9FF3F" }}>Securely.</strong>
+            <span style={{ color: "#C9FF3F" }}>Securely.</span>
             <br />
-            We Secure What&apos;s Already{" "}
-            <strong>Built.</strong>
+            We Secure What&apos;s{" "}
+            <span style={{ WebkitTextStroke: "2px #E8E6E1", color: "transparent" }}>
+              Already Built.
+            </span>
           </h1>
         </motion.div>
 
