@@ -57,7 +57,6 @@ export default function Home() {
 
       {/* Desktop Header */}
       <header
-      <div
         className={`fixed top-4 left-0 right-0 z-[9999] mx-auto hidden w-full flex-row items-center justify-between md:flex transition-all duration-300 ${
           isScrolled ? "max-w-3xl px-4" : "max-w-5xl px-6"
         } py-3`}
