@@ -10,19 +10,19 @@ import { RevealHeading } from "@/components/ui/reveal-heading"
 const clients = [
   {
     id: "01", name: "Early-Stage Startups", tagline: "Ship fast. Stay secure.", Icon: Rocket,
-    description: "You're moving fast and can't afford a breach. We become your security-aware development partner — helping you ship a production-ready product without the corners that end companies.",
+    description: "You're moving fast and can't afford a breach. We become your security-aware development partner, helping you ship a production-ready product without cutting the corners that end companies.",
     features: ["Secure MVP development", "Security architecture from day one", "Vulnerability assessment", "DevSecOps pipeline setup", "Ongoing security consulting"],
     cta: "Start a Project", href: "/contact", rotate: "-1deg", featured: false,
   },
   {
     id: "02", name: "Small Businesses", tagline: "Built right. Delivered end-to-end.", Icon: Building2,
-    description: "Software built without cutting corners — security included from day one, not bolted on after. One team, full accountability, zero middlemen. We own the entire engagement.",
+    description: "Software built without cutting corners. Security included from day one, not bolted on after. One team, full accountability, zero middlemen. We own the entire engagement.",
     features: ["Full-stack web & desktop dev", "Code auditing & hardening", "Secure deployment setup", "AI-powered security tooling", "Complete project ownership"],
     cta: "Discuss Your Project", href: "/contact", rotate: "0deg", featured: true,
   },
   {
     id: "03", name: "Engineering Teams", tagline: "Shift security left. Build with confidence.", Icon: Code2,
-    description: "We integrate into your existing workflow and help build a culture where security is everyone's job — not a blocker at the end of the sprint.",
+    description: "We integrate into your existing workflow and help build a culture where security is everyone's job, not a blocker at the end of the sprint.",
     features: ["CI/CD security integration", "GitHub Actions / GitLab CI", "Docker & Kubernetes hardening", "Security culture coaching", "DevSecOps roadmap"],
     cta: "Get In Touch", href: "/contact", rotate: "1deg", featured: false,
   },
@@ -184,7 +184,7 @@ export function PricingSection() {
         {/* Footer */}
         <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }}
           className="text-center text-sm mt-12" style={{ fontFamily: "'IBM Plex Sans', sans-serif", color: "#8A8680" }}>
-          Every project is taken on end-to-end — design, development, testing, and deployment.{" "}
+          Every project is taken on end-to-end: design, development, testing, and deployment.{" "}
           <Link href="/contact" className="underline underline-offset-4" style={{ color: "#C9FF3F" }}>Let&apos;s talk.</Link>
         </motion.p>
       </div>
