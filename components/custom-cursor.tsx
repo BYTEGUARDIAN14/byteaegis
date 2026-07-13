@@ -9,7 +9,6 @@ export function CustomCursor() {
 
   const mx = useMotionValue(-200)
   const my = useMotionValue(-200)
-  // Spring, same values as FollowerPointerCard
   const sx = useSpring(mx, { stiffness: 150, damping: 15, mass: 0.1 })
   const sy = useSpring(my, { stiffness: 150, damping: 15, mass: 0.1 })
 
@@ -61,27 +60,37 @@ export function CustomCursor() {
           transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
         >
           <div className="flex items-center pointer-events-none">
-            {/* Exact same arrow from FollowerPointerCard */}
+            {/* Acid-green cursor arrow */}
             <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="1"
               viewBox="0 0 16 16"
-              className="h-6 w-6 -rotate-[70deg] transform stroke-blue-400 text-blue-500 drop-shadow-lg"
+              className="h-7 w-7 -rotate-[70deg] transform"
+              style={{ filter: "drop-shadow(2px 2px 0px #1E1D1B)" }}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+              <path 
+                d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" 
+                fill="#C9FF3F"
+                stroke="#1E1D1B"
+                strokeWidth="1.2"
+                strokeLinejoin="round"
+              />
             </svg>
 
-            {/* Label pill, appears on hoverable elements */}
+            {/* Label pill on hover — sharp, acid green */}
             <AnimatePresence>
               {hovering && (
                 <motion.div
                   initial={{ scale: 0.5, opacity: 0 }}
                   animate={{ scale: 1,   opacity: 1 }}
                   exit={{ scale: 0.5,    opacity: 0 }}
-                  className="ml-2 min-w-max rounded-full px-2 py-1 text-xs whitespace-nowrap text-white shadow-lg border border-white/20"
-                  style={{ backgroundColor: "#3b82f6" }}
+                  className="ml-2 min-w-max px-2 py-1 text-xs whitespace-nowrap font-bold"
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    backgroundColor: "#C9FF3F",
+                    color: "#1E1D1B",
+                    border: "1.5px solid #1E1D1B",
+                    borderRadius: 0,
+                  }}
                 >
                   {label || "byteaegis"}
                 </motion.div>
