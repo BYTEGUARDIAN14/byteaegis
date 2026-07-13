@@ -9,10 +9,15 @@ export function CustomCursor() {
 
   const mx = useMotionValue(-200)
   const my = useMotionValue(-200)
-  const sx = useSpring(mx, { stiffness: 150, damping: 15, mass: 0.1 })
-  const sy = useSpring(my, { stiffness: 150, damping: 15, mass: 0.1 })
+  const sx = useSpring(mx, { stiffness: 300, damping: 30, mass: 0.2 })
+  const sy = useSpring(my, { stiffness: 300, damping: 30, mass: 0.2 })
 
   useEffect(() => {
+    // Disable on touch devices
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+      return
+    }
+
     const move = (e: MouseEvent) => {
       mx.set(e.clientX)
       my.set(e.clientY)
@@ -52,12 +57,12 @@ export function CustomCursor() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed z-[99999] pointer-events-none"
+          className="fixed z-[99999] pointer-events-none hidden md:block"
           style={{ top: sy, left: sx, translateX: "-50%", translateY: "-50%" }}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30, mass: 0.2 }}
         >
           <div className="flex items-center pointer-events-none">
             {/* Acid-green cursor arrow */}
