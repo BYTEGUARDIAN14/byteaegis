@@ -73,12 +73,6 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <div className="w-8 h-8" style={{ backgroundColor: "#C9FF3F", WebkitMask: "url(/logo-blue.svg) center/contain no-repeat", mask: "url(/logo-blue.svg) center/contain no-repeat" }} aria-label="byteaegis Logo" />
-          <span
-            className="hidden sm:inline font-bold text-sm"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#C9FF3F", letterSpacing: "-0.02em" }}
-          >
-            byteaegis
-          </span>
         </a>
 
         <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium md:flex md:space-x-2">
