@@ -118,9 +118,7 @@ export function TechStack() {
         >
           <RevealHeading text="Our Tech Stack" delay={0.1} />
         </h2>
-        <p className="mt-2 text-sm" style={{ fontFamily: "'JetBrains Mono', monospace", color: "#8A8680" }}>
-          Hover to reveal brand colours
-        </p>
+
       </div>
 
       <div className="flex flex-col gap-10">
