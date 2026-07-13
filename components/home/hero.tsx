@@ -16,7 +16,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden h-screen flex flex-col"
+      className="relative overflow-hidden min-h-[100dvh] flex flex-col pt-20"
       style={{ backgroundColor: "#1E1D1B" }}
     >
       {/* DotGrid background */}
@@ -33,31 +33,29 @@ export default function Hero() {
       </div>
 
       {/* Content — perfectly centered within the full viewport height */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 text-center">
 
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-6 w-full max-w-5xl"
+          className="mb-6 w-full max-w-[90vw] md:max-w-5xl"
         >
           <h1
             id="main-title"
-            className="font-black uppercase"
+            className="font-black uppercase text-[2.5rem] leading-[1.1] sm:text-6xl md:text-7xl lg:text-[6rem] xl:text-[7rem]"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               letterSpacing: "-0.04em",
               color: "#E8E6E1",
-              lineHeight: "1.0",
-              fontSize: "clamp(2.4rem, 7.5vw, 6rem)",
             }}
           >
             We Build Software{" "}
-            <span style={{ color: "#C9FF3F" }}>Securely.</span>
+            <span style={{ color: "#C9FF3F", display: "inline-block" }}>Securely.</span>
             <br />
             We Secure What&apos;s{" "}
-            <span style={{ WebkitTextStroke: "2px #E8E6E1", color: "transparent" }}>
+            <span style={{ WebkitTextStroke: "2px #E8E6E1", color: "transparent", display: "inline-block" }}>
               Already Built.
             </span>
           </h1>
