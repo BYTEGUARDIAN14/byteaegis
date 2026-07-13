@@ -51,50 +51,14 @@ export function StickyFooter() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <ul className="space-y-2" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
-                <li
-                  className="hover:underline cursor-pointer transition-opacity"
-                  onMouseEnter={e => ((e.target as HTMLElement).style.opacity = "0.6")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.opacity = "1")}
-                >
-                  <a href="#services">Services</a>
-                </li>
-                <li
-                  className="hover:underline cursor-pointer transition-opacity"
-                  onMouseEnter={e => ((e.target as HTMLElement).style.opacity = "0.6")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.opacity = "1")}
-                >
-                  <a href="#who-we-work-with">Who We Help</a>
-                </li>
-                <li
-                  className="hover:underline cursor-pointer transition-opacity"
-                  onMouseEnter={e => ((e.target as HTMLElement).style.opacity = "0.6")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.opacity = "1")}
-                >
-                  <a href="#faq">FAQ</a>
-                </li>
+                <li><a href="#services" className="footer-link">Services</a></li>
+                <li><a href="#who-we-work-with" className="footer-link">Who We Help</a></li>
+                <li><a href="#faq" className="footer-link">FAQ</a></li>
               </ul>
               <ul className="space-y-2" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
-                <li
-                  className="hover:underline cursor-pointer transition-opacity"
-                  onMouseEnter={e => ((e.target as HTMLElement).style.opacity = "0.6")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.opacity = "1")}
-                >
-                  <a href="https://github.com/BYTEGUARDIAN14" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </li>
-                <li
-                  className="hover:underline cursor-pointer transition-opacity"
-                  onMouseEnter={e => ((e.target as HTMLElement).style.opacity = "0.6")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.opacity = "1")}
-                >
-                  <a href="https://byteaegis.online" target="_blank" rel="noopener noreferrer">byteaegis.online</a>
-                </li>
-                <li
-                  className="hover:underline cursor-pointer transition-opacity"
-                  onMouseEnter={e => ((e.target as HTMLElement).style.opacity = "0.6")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.opacity = "1")}
-                >
-                  <Link href="/contact">Send an email</Link>
-                </li>
+                <li><a href="https://github.com/BYTEGUARDIAN14" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a></li>
+                <li><a href="https://byteaegis.online" target="_blank" rel="noopener noreferrer" className="footer-link">byteaegis.online</a></li>
+                <li><a href="/contact" className="footer-link">Send an email</a></li>
               </ul>
             </motion.div>
 
