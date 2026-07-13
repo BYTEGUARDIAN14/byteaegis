@@ -11,7 +11,7 @@ const services = [
     id: "01",
     title: "Secure Full-Stack Development",
     description:
-      "We build web applications and desktop software from scratch with security baked in from day one — not reviewed after the fact. We own the entire stack, from database schema to frontend UI.",
+      "We build web applications and desktop software from scratch with security baked in from day one. Not reviewed after the fact. We own the entire stack, from database schema to frontend UI.",
     icon: Code2,
     href: "/contact",
   },
@@ -35,7 +35,7 @@ const services = [
     id: "04",
     title: "Cloud Security & Infrastructure as Code",
     description:
-      "We audit and harden your cloud infrastructure on AWS, GCP, or Azure — misconfiguration reviews, IAM audits, secrets management, and Terraform/Pulumi IaC security.",
+      "We audit and harden your cloud infrastructure on AWS, GCP, or Azure. Includes misconfiguration reviews, IAM audits, secrets management, and Terraform/Pulumi IaC security.",
     icon: Cloud,
     href: "/contact",
   },
@@ -43,7 +43,7 @@ const services = [
     id: "05",
     title: "AI Integration for Security Workflows",
     description:
-      "We build AI-powered tooling into your security workflows — automated threat analysis, intelligent scan summarization, risk scoring, and AI-assisted remediation using cloud or local models.",
+      "We build AI-powered tooling into your security workflows: automated threat analysis, intelligent scan summarization, risk scoring, and AI-assisted remediation using cloud or local models.",
     icon: Brain,
     href: "/contact",
   },
