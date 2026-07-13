@@ -15,23 +15,67 @@ export function FAQSection() {
   const faqs = [
     {
       question: "What is byteaegis?",
-      answer: "byteaegis is a service-based cybersecurity and software development startup founded by Mohamed Adhnaan J M, a computer science student from Tamil Nadu, India. We work with startups, small businesses, and development teams who need security-focused software built for them or who need their existing systems secured and hardened.",
+      answer: (
+        <div className="space-y-4">
+          <p>
+            byteaegis is a service-based cybersecurity and software development startup founded by Mohamed Adhnaan J M, a computer science student from Tamil Nadu, India.
+          </p>
+          <p>We work with:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Startups who need security-focused software built for them.</li>
+            <li>Small businesses who need their existing systems secured and hardened.</li>
+            <li>Development teams seeking DevSecOps integration.</li>
+          </ul>
+        </div>
+      ),
     },
     {
       question: "What services does byteaegis offer?",
-      answer: "We offer five core services: (1) Secure Web & Desktop Application Development: full-stack builds with security built in from day one. (2) Vulnerability Assessment & Code Auditing: identifying security flaws in your existing codebase with a prioritized remediation report. (3) DevSecOps & CI/CD Pipeline Setup: automating security scanning in your development workflow. (4) AI Integration for Security Workflows: building AI-powered threat analysis and risk scoring tools. (5) Security Consulting & Architecture Review: advising teams on best practices, penetration testing, and cloud hardening.",
+      answer: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Secure Web & Desktop App Development:</strong> Full-stack builds with security built-in from day one.</li>
+          <li><strong>Vulnerability Assessment & Code Auditing:</strong> Identifying security flaws in your codebase with prioritized remediation reports.</li>
+          <li><strong>DevSecOps & CI/CD Pipeline Setup:</strong> Automating security scanning in your development workflow.</li>
+          <li><strong>AI Integration for Security:</strong> Building AI-powered threat analysis and risk scoring tools.</li>
+          <li><strong>Security Consulting:</strong> Advising teams on best practices, penetration testing, and cloud hardening.</li>
+        </ul>
+      ),
     },
     {
       question: "Who does byteaegis work with?",
-      answer: "We work with early-stage startups shipping fast who need a security-aware development partner, small businesses that need software built without cutting corners on security, and engineering teams that want to shift security left in their development process but don't know where to start.",
+      answer: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Early-stage startups</strong> shipping fast who need a security-aware development partner.</li>
+          <li><strong>Small businesses</strong> that need software built without cutting corners on security.</li>
+          <li><strong>Engineering teams</strong> that want to shift security left in their development process but don't know where to start.</li>
+        </ul>
+      ),
     },
     {
       question: "How does byteaegis handle projects end-to-end?",
-      answer: "We handle the full scope of work, from requirement gathering to delivery. This includes design, development, testing, and deployment. Clients don't need to coordinate between multiple agencies or freelancers. We take ownership of the entire engagement.",
+      answer: (
+        <div className="space-y-4">
+          <p>
+            We handle the full scope of work, from requirement gathering to delivery. This includes design, development, testing, and deployment.
+          </p>
+          <p>
+            Clients don't need to coordinate between multiple agencies or freelancers. We take ownership of the entire engagement to ensure security and quality are never compromised.
+          </p>
+        </div>
+      ),
     },
     {
       question: "How do I get started with byteaegis?",
-      answer: "Simply reach out via our contact page. Describe your project or security challenge and we'll get back to you to discuss next steps. You can also find us on GitHub at github.com/BYTEGUARDIAN14.",
+      answer: (
+        <div className="space-y-4">
+          <p>
+            Simply reach out via our contact page. Describe your project or security challenge and we'll get back to you to discuss next steps.
+          </p>
+          <p>
+            You can also find us on GitHub at <strong>github.com/BYTEGUARDIAN14</strong>.
+          </p>
+        </div>
+      ),
     },
   ]
 
