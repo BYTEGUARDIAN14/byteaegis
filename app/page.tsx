@@ -57,9 +57,10 @@ export default function Home() {
 
       {/* Desktop Header */}
       <header
-        className={`fixed top-4 left-0 right-0 z-[9999] mx-auto hidden w-full flex-row items-center justify-between self-start md:flex transition-all duration-300 ${
-          isScrolled ? "max-w-3xl px-2" : "max-w-5xl px-4"
-        } py-2`}
+      <div
+        className={`fixed top-4 left-0 right-0 z-[9999] mx-auto hidden w-full flex-row items-center justify-between md:flex transition-all duration-300 ${
+          isScrolled ? "max-w-3xl px-4" : "max-w-5xl px-6"
+        } py-3`}
         style={{
           backgroundColor: "#2A2825",
           border: "2px solid #3D3B37",
@@ -67,15 +68,17 @@ export default function Home() {
           willChange: "transform",
         }}
       >
-        <a
-          className={`z-50 flex items-center justify-center gap-2 transition-all duration-300 ${isScrolled ? "ml-4" : ""}`}
-          href="/"
-          rel="noopener noreferrer"
-        >
-          <div className="w-8 h-8" style={{ backgroundColor: "#C9FF3F", WebkitMask: "url(/logo-blue.svg) center/contain no-repeat", mask: "url(/logo-blue.svg) center/contain no-repeat" }} aria-label="byteaegis Logo" />
-        </a>
+        <div className="flex-1 flex justify-start">
+          <a
+            className="z-50 flex items-center justify-center transition-all duration-300"
+            href="/"
+            rel="noopener noreferrer"
+          >
+            <div className="w-8 h-8" style={{ backgroundColor: "#C9FF3F", WebkitMask: "url(/logo-blue.svg) center/contain no-repeat", mask: "url(/logo-blue.svg) center/contain no-repeat" }} aria-label="byteaegis Logo" />
+          </a>
+        </div>
 
-        <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium md:flex md:space-x-2">
+        <div className="hidden flex-row items-center justify-center space-x-4 text-sm font-medium md:flex">
           {["Services", "Who We Help", "Why Us", "FAQ"].map((label, i) => {
             const ids = ["services", "who-we-work-with", "why-byteaegis", "faq"]
             return (
@@ -93,7 +96,7 @@ export default function Home() {
           })}
         </div>
 
-        <div className="flex items-center gap-4 relative z-50">
+        <div className="flex-1 flex items-center justify-end relative z-50">
           <a
             href="/contact"
             className="px-4 py-2 text-sm font-bold transition-all duration-100"
