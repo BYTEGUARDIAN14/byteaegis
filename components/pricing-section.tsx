@@ -22,7 +22,7 @@ const clients = [
   },
   {
     id: "03", name: "Engineering Teams", tagline: "Shift security left. Build with confidence.", Icon: Code2,
-    description: "We integrate into your existing workflow and help build a culture where security is everyone's job, not a blocker at the end of the sprint.",
+    description: "We integrate seamlessly into your existing workflow to help build a culture where security is everyone's responsibility—not just a bottleneck at the end of the sprint. From automated CI/CD security checks to developer coaching, we ensure your engineering team can ship features rapidly without introducing critical vulnerabilities or technical debt.",
     features: ["CI/CD security integration", "GitHub Actions / GitLab CI", "Docker & Kubernetes hardening", "Security culture coaching", "DevSecOps roadmap"],
     cta: "Get In Touch", href: "/contact", rotate: "1deg", featured: false,
   },
