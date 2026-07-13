@@ -49,12 +49,14 @@ export default function Hero() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 letterSpacing: "-0.035em",
                 color: "#E8E6E1",
+                lineHeight: "1.1",
               }}
             >
               We Build Software{" "}
               <strong style={{ color: "#C9FF3F" }}>Securely.</strong>
               <br />
-              We Secure What&apos;s Already <strong>Built.</strong>
+              We Secure What&apos;s{" "}
+              <strong>Already Built.</strong>
             </h1>
           </motion.div>
 
@@ -63,15 +65,17 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed"
+            className="mx-auto mb-12 max-w-xl text-base leading-relaxed"
             style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
               color: "#8A8680",
             }}
           >
-            byteaegis is a cybersecurity and software development startup working with startups, small businesses,
-            and development teams who need security-focused software built or their existing systems hardened.
-            Security isn&apos;t an add-on, it&apos;s fundamental to every engagement we take on.
+            byteaegis is a cybersecurity and software development startup.
+            We work with startups, small businesses, and dev teams who need
+            security-focused software built from scratch or their existing
+            systems hardened. Security is not an afterthought here.
+            It is fundamental to every engagement.
           </motion.p>
 
           <motion.div
