@@ -76,34 +76,51 @@ function ServiceRow({
     >
       <Link href={service.href}>
         <div
-          className="group relative border-t border-white/10 cursor-pointer"
+          className="group relative cursor-pointer"
+          style={{ borderTop: "1px solid #3D3B37" }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
           {/* Hover background */}
           <motion.div
-            className="absolute inset-0 bg-white/[0.03]"
+            className="absolute inset-0"
+            style={{ backgroundColor: "#2A2825" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: hovered ? 1 : 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
           />
 
           <div className="relative flex items-start gap-6 py-7 px-2">
             {/* Number */}
-            <span className="text-xs font-mono text-white/30 mt-1 w-6 shrink-0 select-none">
+            <span
+              className="mt-1 w-6 shrink-0 select-none text-xs"
+              style={{ fontFamily: "'JetBrains Mono', monospace", color: "#C9FF3F", opacity: 0.7 }}
+            >
               {service.id}
             </span>
 
             {/* Content */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between gap-4">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white/90 group-hover:text-white transition-colors duration-200">
+                <h3
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight transition-colors duration-200"
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    color: hovered ? "#C9FF3F" : "#E8E6E1",
+                    letterSpacing: "-0.03em",
+                  }}
+                >
                   {service.title}
                 </h3>
 
                 {/* Arrow */}
                 <motion.div
-                  className="shrink-0 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 group-hover:border-blue-500/60 group-hover:text-blue-400 transition-colors duration-200"
+                  className="shrink-0 w-10 h-10 flex items-center justify-center transition-colors duration-200"
+                  style={{
+                    border: `2px solid ${hovered ? "#C9FF3F" : "#3D3B37"}`,
+                    color: hovered ? "#C9FF3F" : "#8A8680",
+                    boxShadow: hovered ? "3px 3px 0px 0px #C9FF3F" : "none",
+                  }}
                   animate={{ rotate: hovered ? 45 : 0 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -122,7 +139,10 @@ function ServiceRow({
                     className="overflow-hidden"
                   >
                     <div className="pt-4">
-                      <p className="text-sm sm:text-base text-white/50 max-w-2xl leading-relaxed">
+                      <p
+                        className="text-sm sm:text-base max-w-2xl leading-relaxed"
+                        style={{ fontFamily: "'IBM Plex Sans', sans-serif", color: "#8A8680" }}
+                      >
                         {service.description}
                       </p>
                     </div>
@@ -142,18 +162,21 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section id="services" className="relative py-24 sm:py-32">
+    <section id="services" className="relative py-24 sm:py-32" style={{ backgroundColor: "#1E1D1B" }}>
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
 
         {/* Header */}
-        <motion.div
-          ref={ref}
-          className="mb-16 sm:mb-20"
-        >
-          <p className="text-xs font-mono tracking-[0.25em] text-white/40 uppercase mb-4">
+        <motion.div ref={ref} className="mb-16 sm:mb-20">
+          <p
+            className="uppercase mb-4 text-xs"
+            style={{ fontFamily: "'JetBrains Mono', monospace", color: "#C9FF3F", letterSpacing: "0.25em", opacity: 0.8 }}
+          >
             Professional Offerings &amp; Specialized Skills
           </p>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black uppercase tracking-tighter leading-none from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 bg-gradient-to-r bg-clip-text text-center text-transparent relative z-10">
+          <h2
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black uppercase tracking-tighter leading-none text-center relative z-10"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#E8E6E1" }}
+          >
             <RevealHeading text="Services" delay={0.1} />
           </h2>
         </motion.div>
@@ -164,7 +187,7 @@ export default function Features() {
             <ServiceRow key={service.id} service={service} index={i} />
           ))}
           {/* Bottom border */}
-          <div className="border-t border-white/10" />
+          <div style={{ borderTop: "1px solid #3D3B37" }} />
         </div>
 
         {/* Footer CTA */}
@@ -175,20 +198,43 @@ export default function Features() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 flex items-center justify-between"
         >
-          <p className="text-sm text-white/30">
+          <p
+            className="text-sm"
+            style={{ fontFamily: "'IBM Plex Sans', sans-serif", color: "#8A8680" }}
+          >
             Not sure what you need?{" "}
-            <Link href="/contact" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-4">
+            <Link
+              href="/contact"
+              className="underline underline-offset-4 transition-colors"
+              style={{ color: "#C9FF3F" }}
+            >
               Let&apos;s talk.
             </Link>
           </p>
           <Link href="/contact">
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="text-sm font-medium px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors"
+            <button
+              className="text-sm font-bold px-5 py-2.5 transition-all duration-100"
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                backgroundColor: "#C9FF3F",
+                color: "#1E1D1B",
+                border: "2px solid #C9FF3F",
+                boxShadow: "3px 3px 0px 0px rgba(0,0,0,0.5)",
+                letterSpacing: "-0.01em",
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLElement
+                el.style.transform = "translate(-2px,-2px)"
+                el.style.boxShadow = "5px 5px 0px 0px rgba(0,0,0,0.5)"
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLElement
+                el.style.transform = "translate(0,0)"
+                el.style.boxShadow = "3px 3px 0px 0px rgba(0,0,0,0.5)"
+              }}
             >
               Start a Project →
-            </motion.button>
+            </button>
           </Link>
         </motion.div>
       </div>
