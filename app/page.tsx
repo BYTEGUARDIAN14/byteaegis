@@ -24,7 +24,6 @@ export default function Home() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -37,11 +36,7 @@ export default function Home() {
         const headerOffset = 120
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
         const offsetPosition = elementPosition - headerOffset
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        })
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" })
       }
     }, 100)
   }
@@ -57,68 +52,75 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full relative bg-black cursor-none">
+    <div className="w-full relative" style={{ backgroundColor: "#1E1D1B" }}>
       <CustomCursor />
-      {/* Pearl Mist Background with Top Glow */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background: "radial-gradient(ellipse 50% 35% at 50% 0%, rgba(226, 232, 240, 0.12), transparent 60%), #000000",
-        }}
-      />
 
       {/* Desktop Header */}
       <header
-        className={`fixed top-4 left-0 right-0 z-[9999] mx-auto hidden w-full flex-row items-center justify-between self-start rounded-full bg-background/80 md:flex backdrop-blur-sm border border-border/50 shadow-lg transition-all duration-300 ${isScrolled ? "max-w-3xl px-2" : "max-w-5xl px-4"
-          } py-2`}
+        className={`fixed top-4 left-0 right-0 z-[9999] mx-auto hidden w-full flex-row items-center justify-between self-start md:flex transition-all duration-300 ${
+          isScrolled ? "max-w-3xl px-2" : "max-w-5xl px-4"
+        } py-2`}
         style={{
+          backgroundColor: "#2A2825",
+          border: "2px solid #3D3B37",
+          boxShadow: "4px 4px 0px 0px #C9FF3F",
           willChange: "transform",
-          transform: "translateZ(0)",
-          backfaceVisibility: "hidden",
-          perspective: "1000px",
         }}
       >
         <a
-          className={`z-50 flex items-center justify-center gap-2 transition-all duration-300 ${isScrolled ? "ml-4" : ""
-            }`}
+          className={`z-50 flex items-center justify-center gap-2 transition-all duration-300 ${isScrolled ? "ml-4" : ""}`}
           href="/"
           rel="noopener noreferrer"
         >
-          <img src="/logo-blue.svg" alt="byteaegis Logo" className="w-8 h-8" />
-          <span className="text-foreground font-bold hidden sm:inline">byteaegis</span>
+          <div className="w-8 h-8" style={{ backgroundColor: "#C9FF3F", WebkitMask: "url(/logo-blue.svg) center/contain no-repeat", mask: "url(/logo-blue.svg) center/contain no-repeat" }} aria-label="byteaegis Logo" />
+          <span
+            className="hidden sm:inline font-bold text-sm"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#C9FF3F", letterSpacing: "-0.02em" }}
+          >
+            byteaegis
+          </span>
         </a>
 
-        <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-muted-foreground transition duration-200 hover:text-foreground md:flex md:space-x-2">
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => { e.preventDefault(); scrollToSection("services") }}
-          >
-            <span className="relative z-20">Services</span>
-          </a>
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => { e.preventDefault(); scrollToSection("who-we-work-with") }}
-          >
-            <span className="relative z-20">Who We Help</span>
-          </a>
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => { e.preventDefault(); scrollToSection("why-byteaegis") }}
-          >
-            <span className="relative z-20">Why Us</span>
-          </a>
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => { e.preventDefault(); scrollToSection("faq") }}
-          >
-            <span className="relative z-20">FAQ</span>
-          </a>
+        <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium md:flex md:space-x-2">
+          {["Services", "Who We Help", "Why Us", "FAQ"].map((label, i) => {
+            const ids = ["services", "who-we-work-with", "why-byteaegis", "faq"]
+            return (
+              <a
+                key={label}
+                className="relative px-4 py-2 cursor-pointer transition-colors duration-150"
+                style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#8A8680", fontSize: "13px", letterSpacing: "-0.01em" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#C9FF3F")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#8A8680")}
+                onClick={e => { e.preventDefault(); scrollToSection(ids[i]) }}
+              >
+                <span className="relative z-20">{label}</span>
+              </a>
+            )
+          })}
         </div>
 
         <div className="flex items-center gap-4 relative z-50">
           <a
             href="/contact"
-            className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm"
+            className="px-4 py-2 text-sm font-bold transition-all duration-100"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              backgroundColor: "#C9FF3F",
+              color: "#1E1D1B",
+              border: "2px solid #C9FF3F",
+              boxShadow: "3px 3px 0px 0px rgba(0,0,0,0.4)",
+              letterSpacing: "-0.02em",
+            }}
+            onMouseEnter={e => {
+              const el = e.currentTarget as HTMLElement
+              el.style.transform = "translate(-2px,-2px)"
+              el.style.boxShadow = "5px 5px 0px 0px rgba(0,0,0,0.4)"
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget as HTMLElement
+              el.style.transform = "translate(0,0)"
+              el.style.boxShadow = "3px 3px 0px 0px rgba(0,0,0,0.4)"
+            }}
           >
             Contact Us
           </a>
@@ -126,67 +128,82 @@ export default function Home() {
       </header>
 
       {/* Mobile Header */}
-      <header className="fixed top-4 left-4 right-4 z-[9999] flex flex-row items-center justify-between rounded-full bg-background/80 backdrop-blur-sm border border-border/50 shadow-lg md:hidden px-4 py-3">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="/"
-          rel="noopener noreferrer"
-        >
-          <img src="/logo-blue.svg" alt="byteaegis Logo" className="w-7 h-7" />
+      <header
+        className="fixed top-4 left-4 right-4 z-[9999] flex flex-row items-center justify-between md:hidden px-4 py-3"
+        style={{
+          backgroundColor: "#2A2825",
+          border: "2px solid #3D3B37",
+          boxShadow: "4px 4px 0px 0px #C9FF3F",
+        }}
+      >
+        <a className="flex items-center justify-center gap-2" href="/" rel="noopener noreferrer">
+          <div className="w-7 h-7" style={{ backgroundColor: "#C9FF3F", WebkitMask: "url(/logo-blue.svg) center/contain no-repeat", mask: "url(/logo-blue.svg) center/contain no-repeat" }} aria-label="byteaegis Logo" />
         </a>
 
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex items-center justify-center w-10 h-10 rounded-full bg-background/50 border border-border/50 transition-colors hover:bg-background/80"
+          className="flex items-center justify-center w-10 h-10 transition-colors"
+          style={{
+            backgroundColor: "#333129",
+            border: "2px solid #3D3B37",
+          }}
           aria-label="Toggle menu"
         >
           <div className="flex flex-col items-center justify-center w-5 h-5 space-y-1">
             <span
-              className={`block w-4 h-0.5 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}
-            ></span>
+              className={`block w-4 h-0.5 transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}
+              style={{ backgroundColor: "#C9FF3F" }}
+            />
             <span
-              className={`block w-4 h-0.5 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`}
-            ></span>
+              className={`block w-4 h-0.5 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`}
+              style={{ backgroundColor: "#C9FF3F" }}
+            />
             <span
-              className={`block w-4 h-0.5 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
-            ></span>
+              className={`block w-4 h-0.5 transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
+              style={{ backgroundColor: "#C9FF3F" }}
+            />
           </div>
         </button>
       </header>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[9998] bg-black/50 backdrop-blur-sm md:hidden">
-          <div className="absolute top-20 left-4 right-4 bg-background/95 backdrop-blur-md border border-border/50 rounded-2xl shadow-2xl p-6">
-            <nav className="flex flex-col space-y-4">
-              <button
-                onClick={() => handleMobileNavClick("services")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => handleMobileNavClick("who-we-work-with")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
-              >
-                Who We Help
-              </button>
-              <button
-                onClick={() => handleMobileNavClick("why-byteaegis")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
-              >
-                Why Us
-              </button>
-              <button
-                onClick={() => handleMobileNavClick("faq")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
-              >
-                FAQ
-              </button>
-              <div className="border-t border-border/50 pt-4 mt-4 flex flex-col space-y-3">
+        <div className="fixed inset-0 z-[9998] md:hidden" style={{ backgroundColor: "rgba(30,29,27,0.95)" }}>
+          <div
+            className="absolute top-20 left-4 right-4 p-6"
+            style={{
+              backgroundColor: "#2A2825",
+              border: "2px solid #3D3B37",
+              boxShadow: "6px 6px 0px 0px #C9FF3F",
+            }}
+          >
+            <nav className="flex flex-col space-y-2">
+              {["Services", "Who We Help", "Why Us", "FAQ"].map((label, i) => {
+                const ids = ["services", "who-we-work-with", "why-byteaegis", "faq"]
+                return (
+                  <button
+                    key={label}
+                    onClick={() => handleMobileNavClick(ids[i])}
+                    className="text-left px-4 py-3 text-lg font-medium transition-colors"
+                    style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#8A8680" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#C9FF3F")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#8A8680")}
+                  >
+                    {label}
+                  </button>
+                )
+              })}
+              <div className="pt-4 mt-2 flex flex-col space-y-3" style={{ borderTop: "1px solid #3D3B37" }}>
                 <a
                   href="/contact"
-                  className="px-4 py-3 text-lg font-bold text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                  className="px-4 py-3 text-lg font-bold text-center transition-all duration-100"
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    backgroundColor: "#C9FF3F",
+                    color: "#1E1D1B",
+                    border: "2px solid #C9FF3F",
+                    boxShadow: "3px 3px 0px 0px rgba(0,0,0,0.4)",
+                  }}
                 >
                   Contact Us
                 </a>
@@ -223,6 +240,9 @@ export default function Home() {
       <div id="faq">
         <FAQSection />
       </div>
+
+      {/* Spacer to prevent footer collision (footer height is h-80 = 320px) */}
+      <div className="h-80 w-full" />
 
       {/* Sticky Footer */}
       <StickyFooter />
