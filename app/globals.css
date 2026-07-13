@@ -261,3 +261,12 @@ code, pre, kbd, samp,
 .animate-marquee          { animation: marquee var(--duration) linear infinite; }
 .animate-marquee-vertical { animation: marquee-vertical var(--duration) linear infinite; }
 .animate-shiny-text       { animation: shiny-text 3s ease-in-out infinite; }
+
+/* Footer navigation links — uses CSS hover so touch devices reset properly */
+.footer-link {
+  display: inline-block;
+  transition: opacity 0.15s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.footer-link:hover { opacity: 0.6; }
