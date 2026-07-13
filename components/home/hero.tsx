@@ -16,7 +16,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden min-h-[100vh] flex flex-col"
+      className="relative overflow-hidden h-screen flex flex-col"
       style={{ backgroundColor: "#1E1D1B" }}
     >
       {/* DotGrid background */}
@@ -32,39 +32,15 @@ export default function Hero() {
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-32 sm:py-40 text-center">
-
-        {/* Eyebrow tag */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-          className="mb-6"
-        >
-          <span
-            className="inline-flex items-center gap-2 px-3 py-1 text-[11px] uppercase tracking-widest"
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              color: "#C9FF3F",
-              border: "1.5px solid #C9FF3F",
-              letterSpacing: "0.12em",
-            }}
-          >
-            <span
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ backgroundColor: "#C9FF3F" }}
-            />
-            DevSecOps &amp; Secure Development
-          </span>
-        </motion.div>
+      {/* Content — perfectly centered within the full viewport height */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center">
 
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mb-7 w-full max-w-5xl"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-6 w-full max-w-5xl"
         >
           <h1
             id="main-title"
@@ -74,7 +50,7 @@ export default function Hero() {
               letterSpacing: "-0.04em",
               color: "#E8E6E1",
               lineHeight: "1.0",
-              fontSize: "clamp(2.6rem, 8vw, 6.5rem)",
+              fontSize: "clamp(2.4rem, 7.5vw, 6rem)",
             }}
           >
             We Build Software{" "}
@@ -87,24 +63,11 @@ export default function Hero() {
           </h1>
         </motion.div>
 
-        {/* Divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mb-7 origin-left"
-          style={{
-            width: "clamp(60px, 10vw, 120px)",
-            height: "2px",
-            backgroundColor: "#C9FF3F",
-          }}
-        />
-
         {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           className="mb-10 max-w-lg text-base leading-[1.75]"
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
@@ -120,7 +83,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.45 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           {/* Primary CTA */}
@@ -183,26 +146,6 @@ export default function Hero() {
               View GitHub
             </button>
           </a>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span
-            className="text-[10px] uppercase tracking-widest"
-            style={{ fontFamily: "'JetBrains Mono', monospace", color: "#3D3B37" }}
-          >
-            Scroll
-          </span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-            style={{ width: 1.5, height: 24, backgroundColor: "#C9FF3F" }}
-          />
         </motion.div>
       </div>
     </section>
